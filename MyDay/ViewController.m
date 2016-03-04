@@ -98,7 +98,6 @@
     
     self.sunTimes.text = @"7:00 am  \u25b2 sun \u25bc  8:00 pm";
     
-    // Creates the views (boxes) inside the Scroll View
     //Initialzes Mutable Arrays
     self.contentBoxes = [NSMutableArray new];
     self.timeArray = [NSMutableArray new];
@@ -139,7 +138,6 @@
 {
     return 1;
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
