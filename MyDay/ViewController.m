@@ -7,7 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "Constants.h"
 #import "CollectionViewCell.h"
+#import "MethodsCache.h"
+#import "WeatherListViewController.h"
 
 @interface ViewController ()
 
@@ -36,13 +39,14 @@
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-@property (strong, nonatomic) NSMutableArray *contentBoxes;
-@property (strong, nonatomic) NSMutableArray *degreeArray;
-@property (strong, nonatomic) NSMutableArray *timeArray;
-@property (strong, nonatomic) NSMutableArray *iconArray;
-@property (strong, nonatomic) NSMutableArray *temperatures;
-@property (strong, nonatomic) NSMutableArray *hours;
-@property (strong, nonatomic) NSMutableArray *icons;
+@property MethodsCache *method;
+
+@property NSMutableArray *degreeArray;
+@property NSMutableArray *timeArray;
+@property NSMutableArray *iconArray;
+@property NSMutableArray *degrees;
+@property NSMutableArray *hours;
+@property NSMutableArray *icons;
 
 @property NSArray *tempTimes;
 @property NSArray *tempIcons;
@@ -56,12 +60,142 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
     self.collectionView.backgroundColor = [UIColor clearColor];
     
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
+    [self adjustForPhoneSizes];
+    
+    self.backgroundImage.image = [UIImage imageNamed:@"paisley sky lapis"];
+    self.backgroundImage.alpha = 0.8;
+    
+    self.method = [MethodsCache new];
+    
+    self.locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    self.locationManager.delegate = self; // setting the delegate of locationManager to self.
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+    [self.locationManager startUpdatingLocation];  //requesting location updates
+    
+    self.sunTimes.text = @"7:00 am  \u25b2 sun \u25bc  8:00 pm";
+    
+    //Initialzes Mutable Arrays
+    self.timeArray = [NSMutableArray new];
+    self.iconArray = [NSMutableArray new];
+    self.degreeArray = [NSMutableArray new];
+    self.hours = [NSMutableArray new];
+    self.icons = [NSMutableArray new];
+    self.degrees = [NSMutableArray new];
+    
+    
+    self.tempTimes = @[@"9 PM", @"10 PM", @"11 PM", @"12 AM", @"1 AM", @"2 AM", @"3 AM", @"4 AM", @"5 AM", @"6 AM"];
+    self.tempIcons = @[@"icon-black-cloudy", @"icon-black-moon", @"icon-black-pc-day", @"icon-black-pc-night", @"icon-black-rain-cloud", @"icon-black-snowfall", @"icon-black-snowflake", @"icon-black-sunny", @"icon-black-thunderstorm", @"icon-black-tornado"];
+    self.tempTemps = @[@"88°", @"105°", @"10°", @"45°", @"-15°", @"64°", @"0°", @"97°", @"118°", @"72°"];
+    
+    //Call to Forecast.io
+    self.forecastr = [Forecastr sharedManager];
+    self.forecastr.apiKey = FORECAST_API_KEY;
+    
+    [self.forecastr getForecastForLocation:self.locationManager.location
+                                      time:nil
+                                exclusions:nil
+                                    extend:nil
+                                   success:^(id JSON)
+     {
+         float latitude = self.locationManager.location.coordinate.latitude;
+         float longitude = self.locationManager.location.coordinate.longitude;
+         
+         [self.forecastr getForecastForLatitude:latitude
+                                      longitude:longitude
+                                           time:nil
+                                     exclusions:nil
+                                         extend:nil
+                                        success:^(id JSON)
+          {
+              self.resultsDict = JSON;
+              
+              NSLog(@"Temp: %@ \n Current: %@ \n The Week: %@ \n Lat & Long: %f , %f", self.resultsDict[@"currently"][@"temperature"], self.resultsDict[@"currently"], self.resultsDict[@"daily"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+              
+              self.weatherSummary.text = self.resultsDict[@"currently"][@"summary"];
+              self.currentTemp.text = [self.method convertToTemperature:self.resultsDict[@"currently"][@"temperature"]];
+              self.hiTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMax"]]];
+              self.loTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMin"]]];
+              
+              //Pulls in the time starting with the array[1]
+              //Time for the hour after the current hour
+              [self.method hourlyData:self.resultsDict ForKey:@"time" ToArray:self.timeArray];
+              
+              for (NSInteger i=0; i<[self.timeArray count]; i++)
+              {
+                  NSString *hour;
+                  hour = [self.method epochTimeToHours:[self.timeArray objectAtIndex:i]];
+                  
+                  [self.hours addObject:hour];
+              }
+              
+              //Pulls in the temperature starting with the array[1]
+              //Temperature to match the hour
+              [self.method hourlyData:self.resultsDict ForKey:@"temperature" ToArray:self.degreeArray];
+              
+              for (NSInteger i=0; i<[self.degreeArray count]; i++)
+              {
+                  NSString *degree;
+                  degree = [self.method convertToTemperature:[self.degreeArray objectAtIndex:i]];
+                  
+                  [self.degrees addObject:degree];
+              }
+              
+              //Pulls in the icon-string starting with the array[1]
+              //Icon-string to match the hour
+              [self.method hourlyData:self.resultsDict ForKey:@"icon" ToArray:self.iconArray];
+              
+              for (NSInteger i=0; i<[self.iconArray count]; i++)
+              {
+                  UIImage *icon;
+                  //"Style" choices for this method are: @"black" or @"white"
+                  icon = [self.method stringToIcon:[self.iconArray objectAtIndex:i] Color:@"black"];
+                  
+                  [self.icons addObject:icon];
+              }
+              
+          }
+                                        failure:^(NSError *error, id response) {
+                                            NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
+                                        }];
+     }
+                                   failure:^(NSError *error, id response) {
+                                       NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
+                                   }];
+    
+
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth {
+    UIView *border = [UIView new];
+    border.backgroundColor = color;
+    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin];
+    border.frame = CGRectMake(0, 0, self.collectionContainer.frame.size.width, borderWidth);
+    [self.collectionContainer addSubview:border];
+}
+
+- (void)addBottomBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth {
+    UIView *border = [UIView new];
+    border.backgroundColor = color;
+    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    border.frame = CGRectMake(0, self.collectionContainer.frame.size.height - borderWidth, self.collectionContainer.frame.size.width, borderWidth);
+    [self.collectionContainer addSubview:border];
+}
+
+-(void)adjustForPhoneSizes
+{
     //Could not remove the extra top/bottom padding, so using borders to mask some empty space in larger screens
     //Adjusting certain label font sizes due to iPhone sizes
     if (UIScreen.mainScreen.bounds.size.height == 480) {
@@ -93,43 +227,6 @@
         [self addTopBorderWithColor:[UIColor whiteColor] andWidth:10.0];
         [self addBottomBorderWithColor:[UIColor whiteColor] andWidth:10.0];
     }
-    
-    self.backgroundImage.image = [UIImage imageNamed:@"paisley sky lapis"];
-    
-    self.sunTimes.text = @"7:00 am  \u25b2 sun \u25bc  8:00 pm";
-    
-    //Initialzes Mutable Arrays
-    self.contentBoxes = [NSMutableArray new];
-    self.timeArray = [NSMutableArray new];
-    self.iconArray = [NSMutableArray new];
-    self.degreeArray = [NSMutableArray new];
-    
-    self.tempTimes = @[@"9 PM", @"10 PM", @"11 PM", @"12 AM", @"1 AM", @"2 AM", @"3 AM", @"4 AM", @"5 AM", @"6 AM"];
-    self.tempIcons = @[@"icon-black-cloudy", @"icon-black-moon", @"icon-black-pc-day", @"icon-black-pc-night", @"icon-black-rain-cloud", @"icon-black-snowfall", @"icon-black-snowflake", @"icon-black-sunny", @"icon-black-thunderstorm", @"icon-black-tornado"];
-    self.tempTemps = @[@"88°", @"105°", @"10°", @"45°", @"-15°", @"64°", @"0°", @"97°", @"118°", @"72°"];
-    
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth {
-    UIView *border = [UIView new];
-    border.backgroundColor = color;
-    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin];
-    border.frame = CGRectMake(0, 0, self.collectionContainer.frame.size.width, borderWidth);
-    [self.collectionContainer addSubview:border];
-}
-
-- (void)addBottomBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth {
-    UIView *border = [UIView new];
-    border.backgroundColor = color;
-    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
-    border.frame = CGRectMake(0, self.collectionContainer.frame.size.height - borderWidth, self.collectionContainer.frame.size.width, borderWidth);
-    [self.collectionContainer addSubview:border];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -163,6 +260,42 @@
     return cell;
 }
 
+#pragma mark - CLLocationManager methods
+
+//Used in NSLog
+-(NSString *) deviceLocation
+{
+    return [NSString stringWithFormat:@"latitude: %f  longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"There was an error retrieving your location" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [errorAlert addAction:okButton];
+    
+    [self presentViewController:errorAlert animated:YES completion:nil];
+    
+    NSLog(@"Error: %@",error.description);
+}
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *crnLoc = [locations lastObject];
+    
+    [self.locationManager stopUpdatingLocation];
+    
+    NSLog(@"From the method: %@", crnLoc);
+}
+
+#pragma mark - Buttons
 
 - (IBAction)forecastTapped:(id)sender
 {
@@ -179,6 +312,22 @@
     NSLog(@"RSS Pressed.");
 }
 
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     
+     if ([segue.identifier isEqualToString:@"weeklySegue"])
+     {
+         WeatherListViewController *weatherVC = segue.destinationViewController;
+         weatherVC.resultsDict = self.resultsDict;
+     }
+     
+     
+ }
 
 
 
