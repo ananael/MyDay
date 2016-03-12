@@ -47,6 +47,15 @@
 		D27B53E61C893B9C00C7F71F /* WeatherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27B53E51C893B9C00C7F71F /* WeatherListViewController.m */; };
 		D27B53E91C893E5D00C7F71F /* WeatherListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D27B53E81C893E5D00C7F71F /* WeatherListTableViewCell.m */; };
 		D27B53EE1C89633200C7F71F /* paisley sky citrine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D27B53ED1C89633200C7F71F /* paisley sky citrine@2x.png */; };
+		D2C72BB81C8DE48000813FB5 /* OpeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BB71C8DE48000813FB5 /* OpeningViewController.m */; };
+		D2C72BBB1C8F397800813FB5 /* ListDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BBA1C8F397800813FB5 /* ListDataStore.m */; };
+		D2C72BCA1C8F452B00813FB5 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BC91C8F452B00813FB5 /* ToDoListViewController.m */; };
+		D2C72BCD1C8F457500813FB5 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BCC1C8F457500813FB5 /* AddItemViewController.m */; };
+		D2C72BD01C8F458C00813FB5 /* DetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BCF1C8F458C00813FB5 /* DetailListViewController.m */; };
+		D2C72BD91C8FA9D400813FB5 /* List+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BD21C8FA9D400813FB5 /* List+CoreDataProperties.m */; };
+		D2C72BDA1C8FA9D400813FB5 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BD41C8FA9D400813FB5 /* List.m */; };
+		D2C72BDB1C8FA9D400813FB5 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BD61C8FA9D400813FB5 /* Task+CoreDataProperties.m */; };
+		D2C72BDC1C8FA9D400813FB5 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BD81C8FA9D400813FB5 /* Task.m */; };
 		D698534B81529DF9044E372B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7543145737EEE4914CD085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +131,24 @@
 		D27B53E71C893E5D00C7F71F /* WeatherListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherListTableViewCell.h; sourceTree = "<group>"; };
 		D27B53E81C893E5D00C7F71F /* WeatherListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherListTableViewCell.m; sourceTree = "<group>"; };
 		D27B53ED1C89633200C7F71F /* paisley sky citrine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky citrine@2x.png"; sourceTree = "<group>"; };
+		D2C72BB61C8DE48000813FB5 /* OpeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningViewController.h; sourceTree = "<group>"; };
+		D2C72BB71C8DE48000813FB5 /* OpeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningViewController.m; sourceTree = "<group>"; };
+		D2C72BB91C8F397800813FB5 /* ListDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataStore.h; sourceTree = "<group>"; };
+		D2C72BBA1C8F397800813FB5 /* ListDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataStore.m; sourceTree = "<group>"; };
+		D2C72BC81C8F452B00813FB5 /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
+		D2C72BC91C8F452B00813FB5 /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
+		D2C72BCB1C8F457500813FB5 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		D2C72BCC1C8F457500813FB5 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		D2C72BCE1C8F458C00813FB5 /* DetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailListViewController.h; sourceTree = "<group>"; };
+		D2C72BCF1C8F458C00813FB5 /* DetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailListViewController.m; sourceTree = "<group>"; };
+		D2C72BD11C8FA9D400813FB5 /* List+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "List+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D2C72BD21C8FA9D400813FB5 /* List+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "List+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D2C72BD31C8FA9D400813FB5 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		D2C72BD41C8FA9D400813FB5 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		D2C72BD51C8FA9D400813FB5 /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D2C72BD61C8FA9D400813FB5 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D2C72BD71C8FA9D400813FB5 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		D2C72BD81C8FA9D400813FB5 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		EA029945D09DC36BB510170C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F5EBF00CC2A727844972B9DB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +252,16 @@
 			children = (
 				D27B52B81C80F9E300C7F71F /* AppDelegate.h */,
 				D27B52B91C80F9E300C7F71F /* AppDelegate.m */,
+				D2C72BD11C8FA9D400813FB5 /* List+CoreDataProperties.h */,
+				D2C72BD21C8FA9D400813FB5 /* List+CoreDataProperties.m */,
+				D2C72BD31C8FA9D400813FB5 /* List.h */,
+				D2C72BD41C8FA9D400813FB5 /* List.m */,
+				D2C72BD51C8FA9D400813FB5 /* Task+CoreDataProperties.h */,
+				D2C72BD61C8FA9D400813FB5 /* Task+CoreDataProperties.m */,
+				D2C72BD71C8FA9D400813FB5 /* Task.h */,
+				D2C72BD81C8FA9D400813FB5 /* Task.m */,
+				D2C72BB91C8F397800813FB5 /* ListDataStore.h */,
+				D2C72BBA1C8F397800813FB5 /* ListDataStore.m */,
 				D261F6A61C8A137000CD30F2 /* Constants.h */,
 				D261F6A71C8A137000CD30F2 /* Constants.m */,
 				D261F6A31C8A132100CD30F2 /* MethodsCache.h */,
@@ -233,10 +270,18 @@
 				D27B53C91C88F19A00C7F71F /* CollectionViewCell.m */,
 				D27B53E71C893E5D00C7F71F /* WeatherListTableViewCell.h */,
 				D27B53E81C893E5D00C7F71F /* WeatherListTableViewCell.m */,
+				D2C72BB61C8DE48000813FB5 /* OpeningViewController.h */,
+				D2C72BB71C8DE48000813FB5 /* OpeningViewController.m */,
 				D27B52BB1C80F9E300C7F71F /* ViewController.h */,
 				D27B52BC1C80F9E300C7F71F /* ViewController.m */,
 				D27B53E41C893B9C00C7F71F /* WeatherListViewController.h */,
 				D27B53E51C893B9C00C7F71F /* WeatherListViewController.m */,
+				D2C72BC81C8F452B00813FB5 /* ToDoListViewController.h */,
+				D2C72BC91C8F452B00813FB5 /* ToDoListViewController.m */,
+				D2C72BCB1C8F457500813FB5 /* AddItemViewController.h */,
+				D2C72BCC1C8F457500813FB5 /* AddItemViewController.m */,
+				D2C72BCE1C8F458C00813FB5 /* DetailListViewController.h */,
+				D2C72BCF1C8F458C00813FB5 /* DetailListViewController.m */,
 				D27B52BE1C80F9E300C7F71F /* Main.storyboard */,
 				D27B52C41C80F9E300C7F71F /* Assets.xcassets */,
 				D27B52C61C80F9E300C7F71F /* LaunchScreen.storyboard */,
@@ -524,13 +569,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27B52BD1C80F9E300C7F71F /* ViewController.m in Sources */,
+				D2C72BBB1C8F397800813FB5 /* ListDataStore.m in Sources */,
+				D2C72BCA1C8F452B00813FB5 /* ToDoListViewController.m in Sources */,
 				D261F6A51C8A132200CD30F2 /* MethodsCache.m in Sources */,
 				D27B53E61C893B9C00C7F71F /* WeatherListViewController.m in Sources */,
+				D2C72BB81C8DE48000813FB5 /* OpeningViewController.m in Sources */,
 				D27B53CA1C88F19A00C7F71F /* CollectionViewCell.m in Sources */,
+				D2C72BCD1C8F457500813FB5 /* AddItemViewController.m in Sources */,
+				D2C72BD91C8FA9D400813FB5 /* List+CoreDataProperties.m in Sources */,
 				D27B53E91C893E5D00C7F71F /* WeatherListTableViewCell.m in Sources */,
 				D27B52BA1C80F9E300C7F71F /* AppDelegate.m in Sources */,
 				D27B52C31C80F9E300C7F71F /* MyDay.xcdatamodeld in Sources */,
 				D27B52B71C80F9E300C7F71F /* main.m in Sources */,
+				D2C72BDA1C8FA9D400813FB5 /* List.m in Sources */,
+				D2C72BD01C8F458C00813FB5 /* DetailListViewController.m in Sources */,
+				D2C72BDB1C8FA9D400813FB5 /* Task+CoreDataProperties.m in Sources */,
+				D2C72BDC1C8FA9D400813FB5 /* Task.m in Sources */,
 				D261F6A81C8A137000CD30F2 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

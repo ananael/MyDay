@@ -211,6 +211,7 @@
         cell.dayLabel.text = @"now";
         cell.dayLabel.textColor = [UIColor whiteColor];
         cell.detailLabel.textColor = [UIColor whiteColor];
+        cell.degreeLabel.text = [self.method convertToTemperature:self.resultsDict[@"currently"][@"temperature"]];
         cell.dateLabel.textColor = [UIColor whiteColor];
         cell.iconImage.image = [self.method stringToIcon:self.iconArray[indexPath.row] Color:@"white"];
         
@@ -237,8 +238,8 @@
 
 - (IBAction)homeTapped:(id)sender
 {
-    //[self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)todoTapped:(id)sender

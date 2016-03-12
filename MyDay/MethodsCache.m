@@ -80,6 +80,19 @@
     return visibilityString;
 }
 
+-(NSString *) epochTimeToLongFormat:(NSNumber *)number
+{
+    NSInteger convertedNumber = [number integerValue];
+    NSTimeInterval time = convertedNumber;
+    NSDate *humanDate = [NSDate dateWithTimeIntervalSince1970:time];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"h:mm a"];
+    
+    NSString *resultString = [formatter stringFromDate:humanDate];
+    return resultString;
+}
+
 -(NSString *) epochTimeToHours:(NSNumber *)number
 {
     NSInteger convertedNumber = [number integerValue];

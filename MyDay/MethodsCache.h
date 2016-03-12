@@ -18,6 +18,7 @@
 -(NSString *) convertToWindBearing:(NSNumber *)number1 AndSpeed:(NSNumber *)number2;
 -(NSString *) convertToVisibility:(NSNumber *)number;
 -(void)hourlyData:(NSDictionary *)dict ForKey:(NSString *)key ToArray:(NSMutableArray *)array;
+-(NSString *) epochTimeToLongFormat:(NSNumber *)number;
 -(NSString *) epochTimeToHours:(NSNumber *)number;
 -(NSString *) epochTimeToDay:(NSNumber *)number;
 -(NSString *) epochTimeToDate:(NSNumber *)number;

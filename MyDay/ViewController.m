@@ -11,6 +11,7 @@
 #import "CollectionViewCell.h"
 #import "MethodsCache.h"
 #import "WeatherListViewController.h"
+#import "ToDoListViewController.h"
 
 @interface ViewController ()
 
@@ -73,13 +74,6 @@
     
     self.method = [MethodsCache new];
     
-    self.locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
-    self.locationManager.delegate = self; // setting the delegate of locationManager to self.
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
-    [self.locationManager startUpdatingLocation];  //requesting location updates
-    
-    self.sunTimes.text = @"7:00 am  \u25b2 sun \u25bc  8:00 pm";
-    
     //Initialzes Mutable Arrays
     self.timeArray = [NSMutableArray new];
     self.iconArray = [NSMutableArray new];
@@ -88,87 +82,49 @@
     self.icons = [NSMutableArray new];
     self.degrees = [NSMutableArray new];
     
+    self.weatherSummary.text = self.resultsDict[@"currently"][@"summary"];
+    self.currentTemp.text = [self.method convertToTemperature:self.resultsDict[@"currently"][@"temperature"]];
+    self.hiTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMax"]]];
+    self.loTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMin"]]];
+    self.sunTimes.text = [NSString stringWithFormat:@"%@  \u25b2 sun \u25bc  %@", [self.method epochTimeToLongFormat:self.resultsDict[@"daily"][@"data"][0][@"sunriseTime"]], [self.method epochTimeToLongFormat:self.resultsDict[@"daily"][@"data"][0][@"sunsetTime"]]];
     
-    self.tempTimes = @[@"9 PM", @"10 PM", @"11 PM", @"12 AM", @"1 AM", @"2 AM", @"3 AM", @"4 AM", @"5 AM", @"6 AM"];
-    self.tempIcons = @[@"icon-black-cloudy", @"icon-black-moon", @"icon-black-pc-day", @"icon-black-pc-night", @"icon-black-rain-cloud", @"icon-black-snowfall", @"icon-black-snowflake", @"icon-black-sunny", @"icon-black-thunderstorm", @"icon-black-tornado"];
-    self.tempTemps = @[@"88°", @"105°", @"10°", @"45°", @"-15°", @"64°", @"0°", @"97°", @"118°", @"72°"];
+    //Pulls in the time starting with the array[1]
+    //Time for the hour after the current hour
+    [self.method hourlyData:self.resultsDict ForKey:@"time" ToArray:self.timeArray];
     
-    //Call to Forecast.io
-    self.forecastr = [Forecastr sharedManager];
-    self.forecastr.apiKey = FORECAST_API_KEY;
+    for (NSInteger i=0; i<[self.timeArray count]; i++)
+    {
+        NSString *hour;
+        hour = [self.method epochTimeToHours:[self.timeArray objectAtIndex:i]];
+        
+        [self.hours addObject:hour];
+    }
     
-    [self.forecastr getForecastForLocation:self.locationManager.location
-                                      time:nil
-                                exclusions:nil
-                                    extend:nil
-                                   success:^(id JSON)
-     {
-         float latitude = self.locationManager.location.coordinate.latitude;
-         float longitude = self.locationManager.location.coordinate.longitude;
-         
-         [self.forecastr getForecastForLatitude:latitude
-                                      longitude:longitude
-                                           time:nil
-                                     exclusions:nil
-                                         extend:nil
-                                        success:^(id JSON)
-          {
-              self.resultsDict = JSON;
-              
-              NSLog(@"Temp: %@ \n Current: %@ \n The Week: %@ \n Lat & Long: %f , %f", self.resultsDict[@"currently"][@"temperature"], self.resultsDict[@"currently"], self.resultsDict[@"daily"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
-              
-              self.weatherSummary.text = self.resultsDict[@"currently"][@"summary"];
-              self.currentTemp.text = [self.method convertToTemperature:self.resultsDict[@"currently"][@"temperature"]];
-              self.hiTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMax"]]];
-              self.loTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMin"]]];
-              
-              //Pulls in the time starting with the array[1]
-              //Time for the hour after the current hour
-              [self.method hourlyData:self.resultsDict ForKey:@"time" ToArray:self.timeArray];
-              
-              for (NSInteger i=0; i<[self.timeArray count]; i++)
-              {
-                  NSString *hour;
-                  hour = [self.method epochTimeToHours:[self.timeArray objectAtIndex:i]];
-                  
-                  [self.hours addObject:hour];
-              }
-              
-              //Pulls in the temperature starting with the array[1]
-              //Temperature to match the hour
-              [self.method hourlyData:self.resultsDict ForKey:@"temperature" ToArray:self.degreeArray];
-              
-              for (NSInteger i=0; i<[self.degreeArray count]; i++)
-              {
-                  NSString *degree;
-                  degree = [self.method convertToTemperature:[self.degreeArray objectAtIndex:i]];
-                  
-                  [self.degrees addObject:degree];
-              }
-              
-              //Pulls in the icon-string starting with the array[1]
-              //Icon-string to match the hour
-              [self.method hourlyData:self.resultsDict ForKey:@"icon" ToArray:self.iconArray];
-              
-              for (NSInteger i=0; i<[self.iconArray count]; i++)
-              {
-                  UIImage *icon;
-                  //"Style" choices for this method are: @"black" or @"white"
-                  icon = [self.method stringToIcon:[self.iconArray objectAtIndex:i] Color:@"black"];
-                  
-                  [self.icons addObject:icon];
-              }
-              
-          }
-                                        failure:^(NSError *error, id response) {
-                                            NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
-                                        }];
-     }
-                                   failure:^(NSError *error, id response) {
-                                       NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
-                                   }];
+    //Pulls in the temperature starting with the array[1]
+    //Temperature to match the hour
+    [self.method hourlyData:self.resultsDict ForKey:@"temperature" ToArray:self.degreeArray];
     
-
+    for (NSInteger i=0; i<[self.degreeArray count]; i++)
+    {
+        NSString *degree;
+        degree = [self.method convertToTemperature:[self.degreeArray objectAtIndex:i]];
+        
+        [self.degrees addObject:degree];
+    }
+    
+    //Pulls in the icon-string starting with the array[1]
+    //Icon-string to match the hour
+    [self.method hourlyData:self.resultsDict ForKey:@"icon" ToArray:self.iconArray];
+    
+    for (NSInteger i=0; i<[self.iconArray count]; i++)
+    {
+        UIImage *icon;
+        //"Style" choices for this method are: @"black" or @"white"
+        icon = [self.method stringToIcon:[self.iconArray objectAtIndex:i] Color:@"black"];
+        
+        [self.icons addObject:icon];
+    }
+    
     
     
 }
@@ -200,8 +156,8 @@
     //Adjusting certain label font sizes due to iPhone sizes
     if (UIScreen.mainScreen.bounds.size.height == 480) {
         // iPhone 4
-        self.weatherSummary.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:22];
-        self.currentTemp.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:34];
+        self.weatherSummary.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:25];
+        self.currentTemp.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:36];
         self.hiTemp.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:14];
         self.loTemp.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:14];
         self.sunTimes.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:14];
@@ -210,8 +166,8 @@
         
     } else if (UIScreen.mainScreen.bounds.size.height == 568) {
         // IPhone 5
-        self.weatherSummary.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:25];
-        self.currentTemp.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:40];
+        self.weatherSummary.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:29];
+        self.currentTemp.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:42];
         self.hiTemp.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16];
         self.loTemp.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16];
         self.sunTimes.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16];
@@ -219,8 +175,8 @@
         [self addBottomBorderWithColor:[UIColor whiteColor] andWidth:8.0];
     } else
     {
-        self.weatherSummary.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:32];
-        self.currentTemp.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:42];
+        self.weatherSummary.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:34];
+        self.currentTemp.font = [UIFont fontWithName:@"AvenirNext-HeavyItalic" size:46];
         self.hiTemp.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:18];
         self.loTemp.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:18];
         self.sunTimes.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:18];
@@ -238,7 +194,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.tempTimes count];
+    return [self.hours count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -247,19 +203,19 @@
     
     // Configure the cell
     
-    cell.timeLabel.text = self.tempTimes[indexPath.row];
+    cell.timeLabel.text = self.hours[indexPath.row];
     cell.timeLabel.backgroundColor = [UIColor clearColor];
     
-    cell.iconImage.image = [UIImage imageNamed:self.tempIcons[indexPath.row]];
+    cell.iconImage.image = self.icons[indexPath.row];
     cell.iconImage.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     
-    cell.degreeLabel.text = self.tempTemps[indexPath.row];
+    cell.degreeLabel.text = self.degrees[indexPath.row];
     cell.degreeLabel.backgroundColor = [UIColor clearColor];
     
     
     return cell;
 }
-
+/*
 #pragma mark - CLLocationManager methods
 
 //Used in NSLog
@@ -294,7 +250,7 @@
     
     NSLog(@"From the method: %@", crnLoc);
 }
-
+*/
 #pragma mark - Buttons
 
 - (IBAction)forecastTapped:(id)sender
@@ -324,8 +280,8 @@
      {
          WeatherListViewController *weatherVC = segue.destinationViewController;
          weatherVC.resultsDict = self.resultsDict;
+         
      }
-     
      
  }
 
