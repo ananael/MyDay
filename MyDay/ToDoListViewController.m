@@ -244,6 +244,7 @@
         
         detailListVC.toDoList = self.fetchedResultsController.fetchedObjects[selectedPath.row];
         
+        
     }
  
 }

@@ -255,6 +255,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="rssTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFX-xr-VHw"/>
+                                                    <segue destination="GYO-LX-5xX" kind="show" identifier="rssSegue" id="bfk-YO-aG9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -406,6 +407,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="rssTapped:" destination="U8c-dz-bZe" eventType="touchUpInside" id="SK8-KY-qaf"/>
+                                                    <segue destination="GYO-LX-5xX" kind="show" id="EZn-5E-iBm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -485,7 +487,438 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHV-7L-6JM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2828" y="405"/>
+            <point key="canvasLocation" x="2828" y="385"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TTN-I7-fxC">
+            <objects>
+                <viewController id="GYO-LX-5xX" customClass="RSSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CcX-Ga-9A1"/>
+                        <viewControllerLayoutGuide type="bottom" id="d91-Q5-rco"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xeN-hv-lt6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-n9-3hs" userLabel="backgroundView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-1s-IbG" userLabel="backgroundImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFS-pt-Hlu" userLabel="topContainer">
+                                        <rect key="frame" x="0.0" y="20" width="600" height="140"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aMm-dP-vaf">
+                                                <rect key="frame" x="10" y="10" width="120" height="120"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjC-7y-RbW" userLabel="rssContainer">
+                                                <rect key="frame" x="130" y="10" width="430" height="120"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wti-3Z-MK0" userLabel="buttonA">
+                                                        <rect key="frame" x="5" y="0.0" width="200" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                        <state key="normal" title="ButtonA">
+                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonATapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="4qe-Cw-xsl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-nt-Sq4" userLabel="buttonB">
+                                                        <rect key="frame" x="220" y="0.0" width="200" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                        <state key="normal" title="ButtonB">
+                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonBTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="fft-ra-z8B"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-1y-BO8" userLabel="buttonC">
+                                                        <rect key="frame" x="5" y="65" width="200" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                        <state key="normal" title="ButtonC">
+                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonCTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="z6z-nF-BEu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qeL-G8-M1g" userLabel="buttonD">
+                                                        <rect key="frame" x="220" y="65" width="200" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                        <state key="normal" title="ButtonD">
+                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonDTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="b7W-Jt-XkM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="qeL-G8-M1g" secondAttribute="bottom" id="269-Ut-uR7"/>
+                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="leading" secondItem="dxI-1y-BO8" secondAttribute="trailing" constant="20" id="4EF-VY-9aG"/>
+                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="height" secondItem="wti-3Z-MK0" secondAttribute="height" id="4eH-8A-LQI"/>
+                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="top" secondItem="BjC-7y-RbW" secondAttribute="top" id="4o9-He-B8F"/>
+                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="height" secondItem="wti-3Z-MK0" secondAttribute="height" id="7a8-5l-25F"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5yL-nt-Sq4" secondAttribute="trailing" constant="10" id="B4U-En-AwG"/>
+                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="leading" secondItem="BjC-7y-RbW" secondAttribute="leading" constant="5" id="BBJ-TJ-vp7"/>
+                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="top" secondItem="wti-3Z-MK0" secondAttribute="bottom" constant="10" id="Bh9-lu-iMs"/>
+                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="width" secondItem="wti-3Z-MK0" secondAttribute="width" id="C92-EA-gQB"/>
+                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="width" secondItem="wti-3Z-MK0" secondAttribute="width" id="COg-B3-bhc"/>
+                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="height" secondItem="BjC-7y-RbW" secondAttribute="height" multiplier="0.45833" id="H0v-7t-waS"/>
+                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="width" secondItem="BjC-7y-RbW" secondAttribute="width" multiplier="0.456512" id="HkB-PG-pEd"/>
+                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="width" secondItem="wti-3Z-MK0" secondAttribute="width" id="SPM-0i-sbV"/>
+                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="top" secondItem="5yL-nt-Sq4" secondAttribute="bottom" constant="10" id="YV7-4X-v77"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dxI-1y-BO8" secondAttribute="bottom" id="Yza-Vc-ANn"/>
+                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="leading" secondItem="wti-3Z-MK0" secondAttribute="trailing" constant="20" id="eaa-2e-G4U"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qeL-G8-M1g" secondAttribute="trailing" constant="10" id="oYP-wW-BeA"/>
+                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="height" secondItem="wti-3Z-MK0" secondAttribute="height" id="pI2-Xw-kgM"/>
+                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="top" secondItem="BjC-7y-RbW" secondAttribute="top" id="pmW-6X-cmZ"/>
+                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="leading" secondItem="BjC-7y-RbW" secondAttribute="leading" constant="5" id="sdx-N0-zzd"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="thA-PR-1sj" userLabel="closeButton">
+                                                <rect key="frame" x="560" y="10" width="30" height="120"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="fhn-d9-zXa"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Nc-jW-FYj" userLabel="overlayContainer">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l2T-mL-b2X">
+                                                        <rect key="frame" x="10" y="10" width="250" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="15"/>
+                                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                                        <state key="normal" title="Button1">
+                                                            <color key="titleColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="category1Tapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="4ad-vy-Jm7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tLf-OH-sgy">
+                                                        <rect key="frame" x="340" y="10" width="250" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="15"/>
+                                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                                        <state key="normal" title="Button2">
+                                                            <color key="titleColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="category2Tapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="Zdi-eP-KHT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5PL-ai-Mbd">
+                                                        <rect key="frame" x="10" y="75" width="250" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="15"/>
+                                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                                        <state key="normal" title="Button3">
+                                                            <color key="titleColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="category3Tapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="lkx-Fg-dW6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fot-OC-V3m">
+                                                        <rect key="frame" x="340" y="75" width="250" height="55"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="15"/>
+                                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                                        <state key="normal" title="Button4">
+                                                            <color key="titleColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="category4Tapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="uAV-dH-94F"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.27058823529411763" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="5PL-ai-Mbd" firstAttribute="top" secondItem="l2T-mL-b2X" secondAttribute="bottom" constant="10" id="0lw-cr-jfb"/>
+                                                    <constraint firstItem="l2T-mL-b2X" firstAttribute="height" secondItem="7Nc-jW-FYj" secondAttribute="height" multiplier="0.3929" id="1JY-iy-oaj"/>
+                                                    <constraint firstItem="tLf-OH-sgy" firstAttribute="width" secondItem="7Nc-jW-FYj" secondAttribute="width" multiplier="0.41667" id="4Ob-by-kfn"/>
+                                                    <constraint firstItem="l2T-mL-b2X" firstAttribute="top" secondItem="7Nc-jW-FYj" secondAttribute="top" constant="10" id="8Hm-cN-jnS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tLf-OH-sgy" secondAttribute="trailing" constant="10" id="8Pb-gw-wQZ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5PL-ai-Mbd" secondAttribute="bottom" constant="10" id="A4y-Y0-5wV"/>
+                                                    <constraint firstItem="fot-OC-V3m" firstAttribute="top" secondItem="tLf-OH-sgy" secondAttribute="bottom" constant="10" id="EQV-sV-NeK"/>
+                                                    <constraint firstItem="tLf-OH-sgy" firstAttribute="top" secondItem="7Nc-jW-FYj" secondAttribute="top" constant="10" id="FUf-Ol-1vk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="fot-OC-V3m" secondAttribute="bottom" constant="10" id="GjY-bX-gIV"/>
+                                                    <constraint firstItem="5PL-ai-Mbd" firstAttribute="height" secondItem="7Nc-jW-FYj" secondAttribute="height" multiplier="0.3929" id="Po1-Gt-KT1"/>
+                                                    <constraint firstItem="tLf-OH-sgy" firstAttribute="height" secondItem="7Nc-jW-FYj" secondAttribute="height" multiplier="0.3929" id="Zzp-4V-DN8"/>
+                                                    <constraint firstItem="l2T-mL-b2X" firstAttribute="width" secondItem="7Nc-jW-FYj" secondAttribute="width" multiplier="0.41667" id="aM0-A2-eLZ"/>
+                                                    <constraint firstItem="l2T-mL-b2X" firstAttribute="leading" secondItem="7Nc-jW-FYj" secondAttribute="leading" constant="10" id="fv4-4x-okI"/>
+                                                    <constraint firstItem="5PL-ai-Mbd" firstAttribute="width" secondItem="7Nc-jW-FYj" secondAttribute="width" multiplier="0.41667" id="gfI-Mp-aip"/>
+                                                    <constraint firstItem="5PL-ai-Mbd" firstAttribute="leading" secondItem="7Nc-jW-FYj" secondAttribute="leading" constant="10" id="iGb-m0-Rc7"/>
+                                                    <constraint firstItem="fot-OC-V3m" firstAttribute="height" secondItem="7Nc-jW-FYj" secondAttribute="height" multiplier="0.3929" id="lh1-0i-FMu"/>
+                                                    <constraint firstItem="fot-OC-V3m" firstAttribute="width" secondItem="7Nc-jW-FYj" secondAttribute="width" multiplier="0.41667" id="mA1-ui-AVN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fot-OC-V3m" secondAttribute="trailing" constant="10" id="xfU-7a-F3l"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="aMm-dP-vaf" secondAttribute="bottom" constant="10" id="1JN-pd-qPA"/>
+                                            <constraint firstItem="BjC-7y-RbW" firstAttribute="bottom" secondItem="thA-PR-1sj" secondAttribute="bottom" id="78E-JA-bq6"/>
+                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" constant="10" id="HTx-iN-Wfa"/>
+                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.2" id="K7E-QG-tgL"/>
+                                            <constraint firstItem="BjC-7y-RbW" firstAttribute="leading" secondItem="aMm-dP-vaf" secondAttribute="trailing" id="ScU-zm-R5u"/>
+                                            <constraint firstItem="7Nc-jW-FYj" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" id="SlQ-JD-dFa"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Nc-jW-FYj" secondAttribute="trailing" id="e3y-0r-QXG"/>
+                                            <constraint firstAttribute="bottom" secondItem="thA-PR-1sj" secondAttribute="bottom" constant="10" id="hAf-qU-y5Y"/>
+                                            <constraint firstItem="BjC-7y-RbW" firstAttribute="top" secondItem="thA-PR-1sj" secondAttribute="top" id="hJD-Ih-C30"/>
+                                            <constraint firstAttribute="bottom" secondItem="7Nc-jW-FYj" secondAttribute="bottom" id="kCh-rR-GT6"/>
+                                            <constraint firstItem="7Nc-jW-FYj" firstAttribute="leading" secondItem="UFS-pt-Hlu" secondAttribute="leading" id="lXf-ys-lVX"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="leading" secondItem="BjC-7y-RbW" secondAttribute="trailing" id="lkr-E2-kao"/>
+                                            <constraint firstAttribute="trailing" secondItem="thA-PR-1sj" secondAttribute="trailing" constant="10" id="m0N-gb-r2E"/>
+                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.8571" id="nJk-3X-pKd"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.05" id="uQj-qu-gZj"/>
+                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="leading" secondItem="UFS-pt-Hlu" secondAttribute="leading" constant="10" id="wGw-uN-IEN"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.8571" id="wPt-9m-S3N"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" constant="10" id="zHV-uq-R9k"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jda-Mp-pVc" userLabel="labelContainer">
+                                        <rect key="frame" x="0.0" y="160" width="600" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyV-3m-6yi">
+                                                <rect key="frame" x="10" y="0.0" width="580" height="30"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="MyV-3m-6yi" secondAttribute="bottom" id="7yf-P0-qYf"/>
+                                            <constraint firstItem="MyV-3m-6yi" firstAttribute="top" secondItem="jda-Mp-pVc" secondAttribute="top" id="9s8-60-6Ej"/>
+                                            <constraint firstItem="MyV-3m-6yi" firstAttribute="leading" secondItem="jda-Mp-pVc" secondAttribute="leading" constant="10" id="qF0-Qg-6Fy"/>
+                                            <constraint firstAttribute="trailing" secondItem="MyV-3m-6yi" secondAttribute="trailing" constant="10" id="qXQ-kR-dGQ"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5r5-lf-oot">
+                                        <rect key="frame" x="0.0" y="195" width="600" height="340"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rssCell" id="rMZ-tP-Jfb">
+                                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rMZ-tP-Jfb" id="Fxf-x9-C8u">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <segue destination="Fgn-h9-arp" kind="show" identifier="rssDetailSegue" id="6iC-nZ-5kz"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us7-xr-GKr" userLabel="buttonContainer">
+                                        <rect key="frame" x="0.0" y="540" width="600" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiM-RA-b86" userLabel="homeButton">
+                                                <rect key="frame" x="40" y="0.0" width="160" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                <state key="normal" title="HOME">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="homeTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="bFg-WX-kTl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh8-VW-fiN" userLabel="forecastButton">
+                                                <rect key="frame" x="220" y="0.0" width="160" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                <state key="normal" title="7-Day">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rak-Yc-YPc" userLabel="todoButton">
+                                                <rect key="frame" x="400" y="0.0" width="160" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.1581900168" blue="0.0859375" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                <state key="normal" title="To Do">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="todoTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="ijq-BL-KyH"/>
+                                                    <segue destination="U8c-dz-bZe" kind="show" id="UpY-8i-ct1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="rak-Yc-YPc" secondAttribute="trailing" constant="40" id="07M-T1-sg3"/>
+                                            <constraint firstItem="rh8-VW-fiN" firstAttribute="centerX" secondItem="Us7-xr-GKr" secondAttribute="centerX" id="1Xy-4e-UgN"/>
+                                            <constraint firstAttribute="bottom" secondItem="rh8-VW-fiN" secondAttribute="bottom" id="Fkz-T7-Wmo"/>
+                                            <constraint firstItem="iiM-RA-b86" firstAttribute="leading" secondItem="Us7-xr-GKr" secondAttribute="leading" constant="40" id="NnK-d4-Kpl"/>
+                                            <constraint firstAttribute="bottom" secondItem="iiM-RA-b86" secondAttribute="bottom" id="OrF-RE-B7e"/>
+                                            <constraint firstAttribute="bottom" secondItem="rak-Yc-YPc" secondAttribute="bottom" id="PHb-oB-MRW"/>
+                                            <constraint firstItem="iiM-RA-b86" firstAttribute="height" secondItem="rak-Yc-YPc" secondAttribute="height" id="T05-kc-Sbx"/>
+                                            <constraint firstItem="rak-Yc-YPc" firstAttribute="top" secondItem="Us7-xr-GKr" secondAttribute="top" id="TmA-PU-puK"/>
+                                            <constraint firstItem="iiM-RA-b86" firstAttribute="height" secondItem="rh8-VW-fiN" secondAttribute="height" id="Urz-AO-xaT"/>
+                                            <constraint firstItem="iiM-RA-b86" firstAttribute="width" secondItem="rak-Yc-YPc" secondAttribute="width" id="Wxd-ip-1Fw"/>
+                                            <constraint firstItem="rh8-VW-fiN" firstAttribute="leading" secondItem="iiM-RA-b86" secondAttribute="trailing" constant="20" id="e8v-SJ-aM8"/>
+                                            <constraint firstItem="iiM-RA-b86" firstAttribute="top" secondItem="Us7-xr-GKr" secondAttribute="top" id="fno-la-Qhk"/>
+                                            <constraint firstItem="rak-Yc-YPc" firstAttribute="leading" secondItem="rh8-VW-fiN" secondAttribute="trailing" constant="20" id="hwh-Bm-qKA"/>
+                                            <constraint firstItem="iiM-RA-b86" firstAttribute="width" secondItem="rh8-VW-fiN" secondAttribute="width" id="rcO-9o-5dI"/>
+                                            <constraint firstItem="rh8-VW-fiN" firstAttribute="top" secondItem="Us7-xr-GKr" secondAttribute="top" id="tMp-Fq-9kn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.27058823529999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UFS-pt-Hlu" secondAttribute="trailing" id="6tH-VZ-7o0"/>
+                                    <constraint firstItem="UFS-pt-Hlu" firstAttribute="top" secondItem="nFa-n9-3hs" secondAttribute="top" constant="20" id="8rX-Oy-jWf"/>
+                                    <constraint firstAttribute="trailing" secondItem="qMw-1s-IbG" secondAttribute="trailing" id="CYN-50-aqZ"/>
+                                    <constraint firstItem="jda-Mp-pVc" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="bottom" id="Eh6-eQ-iT8"/>
+                                    <constraint firstItem="qMw-1s-IbG" firstAttribute="top" secondItem="nFa-n9-3hs" secondAttribute="top" id="Ltu-YZ-pnc"/>
+                                    <constraint firstItem="qMw-1s-IbG" firstAttribute="leading" secondItem="nFa-n9-3hs" secondAttribute="leading" id="Rww-A5-Fy0"/>
+                                    <constraint firstItem="Us7-xr-GKr" firstAttribute="height" secondItem="nFa-n9-3hs" secondAttribute="height" multiplier="0.08333" id="SZS-5c-oSt"/>
+                                    <constraint firstItem="jda-Mp-pVc" firstAttribute="leading" secondItem="nFa-n9-3hs" secondAttribute="leading" id="X0t-Z5-tjj"/>
+                                    <constraint firstItem="Us7-xr-GKr" firstAttribute="leading" secondItem="nFa-n9-3hs" secondAttribute="leading" id="a4Z-SS-eW4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Us7-xr-GKr" secondAttribute="trailing" id="aGh-hn-3H0"/>
+                                    <constraint firstAttribute="trailing" secondItem="5r5-lf-oot" secondAttribute="trailing" id="der-pm-OtG"/>
+                                    <constraint firstItem="UFS-pt-Hlu" firstAttribute="width" secondItem="nFa-n9-3hs" secondAttribute="width" id="eLt-cL-uiP"/>
+                                    <constraint firstItem="Us7-xr-GKr" firstAttribute="width" secondItem="nFa-n9-3hs" secondAttribute="width" id="fbP-gM-FKN"/>
+                                    <constraint firstAttribute="trailing" secondItem="jda-Mp-pVc" secondAttribute="trailing" id="ghC-B1-Bc6"/>
+                                    <constraint firstItem="UFS-pt-Hlu" firstAttribute="leading" secondItem="nFa-n9-3hs" secondAttribute="leading" id="iJS-Ee-MI3"/>
+                                    <constraint firstItem="jda-Mp-pVc" firstAttribute="height" secondItem="nFa-n9-3hs" secondAttribute="height" multiplier="0.05" id="ieF-X1-7cM"/>
+                                    <constraint firstAttribute="bottom" secondItem="qMw-1s-IbG" secondAttribute="bottom" id="jsz-AV-Zuh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Us7-xr-GKr" secondAttribute="bottom" constant="10" id="kGE-ZE-aXC"/>
+                                    <constraint firstItem="jda-Mp-pVc" firstAttribute="width" secondItem="nFa-n9-3hs" secondAttribute="width" id="pxm-TD-QGR"/>
+                                    <constraint firstItem="5r5-lf-oot" firstAttribute="top" secondItem="jda-Mp-pVc" secondAttribute="bottom" constant="5" id="qrO-tl-bbd"/>
+                                    <constraint firstItem="5r5-lf-oot" firstAttribute="leading" secondItem="nFa-n9-3hs" secondAttribute="leading" id="tYq-9g-jkF"/>
+                                    <constraint firstItem="UFS-pt-Hlu" firstAttribute="height" secondItem="nFa-n9-3hs" secondAttribute="height" multiplier="0.2333" id="xob-Ve-kpq"/>
+                                    <constraint firstItem="Us7-xr-GKr" firstAttribute="top" secondItem="5r5-lf-oot" secondAttribute="bottom" constant="5" id="ywl-HX-X4R"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nFa-n9-3hs" firstAttribute="top" secondItem="xeN-hv-lt6" secondAttribute="top" id="M2I-1Z-hdr"/>
+                            <constraint firstItem="nFa-n9-3hs" firstAttribute="leading" secondItem="xeN-hv-lt6" secondAttribute="leading" id="YUO-wH-9Ud"/>
+                            <constraint firstAttribute="trailing" secondItem="nFa-n9-3hs" secondAttribute="trailing" id="hhQ-9D-tNU"/>
+                            <constraint firstItem="d91-Q5-rco" firstAttribute="top" secondItem="nFa-n9-3hs" secondAttribute="bottom" id="vbq-3O-1a0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="qMw-1s-IbG" id="r5p-39-8au"/>
+                        <outlet property="backgroundView" destination="nFa-n9-3hs" id="fta-qu-BNL"/>
+                        <outlet property="buttonContainer" destination="Us7-xr-GKr" id="awf-op-720"/>
+                        <outlet property="category1" destination="l2T-mL-b2X" id="LcZ-mh-UIf"/>
+                        <outlet property="category2" destination="tLf-OH-sgy" id="fVC-S1-zjK"/>
+                        <outlet property="category3" destination="5PL-ai-Mbd" id="zhs-SB-vnv"/>
+                        <outlet property="category4" destination="fot-OC-V3m" id="dgY-Gi-Fw7"/>
+                        <outlet property="closeButton" destination="thA-PR-1sj" id="bOf-cE-htr"/>
+                        <outlet property="forecastButton" destination="rh8-VW-fiN" id="ajG-hL-hOK"/>
+                        <outlet property="homeButton" destination="iiM-RA-b86" id="OWa-n0-LTE"/>
+                        <outlet property="labelContainer" destination="jda-Mp-pVc" id="A7A-W0-EsL"/>
+                        <outlet property="overlayContainer" destination="7Nc-jW-FYj" id="FKO-GY-5Hy"/>
+                        <outlet property="rssButtonA" destination="wti-3Z-MK0" id="9d2-rV-EoR"/>
+                        <outlet property="rssButtonB" destination="5yL-nt-Sq4" id="SQu-Wn-HbU"/>
+                        <outlet property="rssButtonC" destination="dxI-1y-BO8" id="7GA-Jg-U6i"/>
+                        <outlet property="rssButtonD" destination="qeL-G8-M1g" id="q4x-KM-nje"/>
+                        <outlet property="rssContainer" destination="BjC-7y-RbW" id="Fhp-H6-ope"/>
+                        <outlet property="rssImage" destination="aMm-dP-vaf" id="cD8-Ge-O8w"/>
+                        <outlet property="rssLabel" destination="MyV-3m-6yi" id="uVS-tQ-tgp"/>
+                        <outlet property="tableView" destination="5r5-lf-oot" id="z4x-WC-6uu"/>
+                        <outlet property="todoButton" destination="rak-Yc-YPc" id="I8s-Cy-Md6"/>
+                        <outlet property="topContainer" destination="UFS-pt-Hlu" id="Vve-TW-dmb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PxO-Dr-jig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828" y="-379"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Sl3-F7-TEE">
+            <objects>
+                <viewController id="Fgn-h9-arp" customClass="RSSDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zOS-ru-hsh"/>
+                        <viewControllerLayoutGuide type="bottom" id="bNx-te-5xv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MiK-u8-o3M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-6O-XbZ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkY-hI-C2D">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="5ht-MT-vwR">
+                                        <connections>
+                                            <action selector="goBack" destination="gdo-6O-XbZ" id="3XV-7F-Hoe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="bIS-Fw-Jrp">
+                                        <connections>
+                                            <action selector="goForward" destination="gdo-6O-XbZ" id="1jM-us-VXd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Yg7-CY-85t"/>
+                                    <barButtonItem systemItem="done" id="zcZ-cV-poE">
+                                        <connections>
+                                            <action selector="doneTapped:" destination="Fgn-h9-arp" id="F3B-jZ-UNX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oAs-Qw-DiN"/>
+                                    <barButtonItem systemItem="stop" id="CtY-oN-DPf">
+                                        <connections>
+                                            <action selector="stopLoading" destination="gdo-6O-XbZ" id="qup-Q3-lBC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="refresh" id="DRk-JU-b8I">
+                                        <connections>
+                                            <action selector="reload" destination="gdo-6O-XbZ" id="Idn-Q3-xJB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rbo-vJ-qgy">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gdo-6O-XbZ" firstAttribute="top" secondItem="zOS-ru-hsh" secondAttribute="bottom" id="1g1-ln-rpt"/>
+                            <constraint firstAttribute="trailing" secondItem="gdo-6O-XbZ" secondAttribute="trailing" id="8NM-WV-a3n"/>
+                            <constraint firstAttribute="trailing" secondItem="mkY-hI-C2D" secondAttribute="trailing" id="FHf-M3-A2l"/>
+                            <constraint firstItem="bNx-te-5xv" firstAttribute="top" secondItem="mkY-hI-C2D" secondAttribute="bottom" id="RQO-ae-DmC"/>
+                            <constraint firstItem="gdo-6O-XbZ" firstAttribute="leading" secondItem="MiK-u8-o3M" secondAttribute="leading" id="azQ-TV-4ZR"/>
+                            <constraint firstItem="rbo-vJ-qgy" firstAttribute="centerY" secondItem="MiK-u8-o3M" secondAttribute="centerY" id="bik-px-fWg"/>
+                            <constraint firstItem="mkY-hI-C2D" firstAttribute="top" secondItem="gdo-6O-XbZ" secondAttribute="bottom" id="i0z-4l-4Lx"/>
+                            <constraint firstItem="rbo-vJ-qgy" firstAttribute="centerX" secondItem="MiK-u8-o3M" secondAttribute="centerX" id="rzs-ZK-Zpp"/>
+                            <constraint firstItem="mkY-hI-C2D" firstAttribute="leading" secondItem="MiK-u8-o3M" secondAttribute="leading" id="zc8-w3-mE6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actInd" destination="rbo-vJ-qgy" id="elS-8S-7sC"/>
+                        <outlet property="toolBar" destination="mkY-hI-C2D" id="UJN-Vu-nBk"/>
+                        <outlet property="webView" destination="gdo-6O-XbZ" id="m33-3J-Bse"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sob-M1-FNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3607" y="-379"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="4Z6-cd-Ra2">
@@ -590,7 +1023,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enc-pe-CaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3621" y="405"/>
+            <point key="canvasLocation" x="3607" y="385"/>
         </scene>
         <!--Detail List View Controller-->
         <scene sceneID="Ena-Os-SzV">
@@ -672,7 +1105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9s-3a-2l5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3244" y="1189"/>
+            <point key="canvasLocation" x="3607" y="1151"/>
         </scene>
         <!--Weather List View Controller-->
         <scene sceneID="2DU-hI-7vB">
@@ -929,7 +1362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9M-tP-EP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013" y="1189"/>
+            <point key="canvasLocation" x="2828" y="1151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XAy-OJ-L1e">
@@ -954,6 +1387,7 @@
         <image name="broken circles.png" width="521" height="521"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XZI-rp-wWA"/>
+        <segue reference="EZn-5E-iBm"/>
+        <segue reference="UpY-8i-ct1"/>
     </inferredMetricsTieBreakers>
 </document>

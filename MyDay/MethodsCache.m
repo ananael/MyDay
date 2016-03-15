@@ -10,6 +10,41 @@
 
 @implementation MethodsCache
 
+-(void)centerButtonText:(NSArray *)array
+{
+    for (UIButton *button in array)
+    {
+        [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    }
+}
+
+-(void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view
+{
+    UIView *border = [UIView new];
+    border.backgroundColor = color;
+    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin];
+    border.frame = CGRectMake(0, 0, view.frame.size.width, borderWidth);
+    [view addSubview:border];
+}
+
+-(void)addBottomBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view
+{
+    UIView *border = [UIView new];
+    border.backgroundColor = color;
+    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    border.frame = CGRectMake(0, view.frame.size.height - borderWidth, view.frame.size.width, borderWidth);
+    [view addSubview:border];
+}
+
+-(void)buttonBorderColor:(UIColor *)color andWidth:(NSInteger)width forArray:(NSArray *)array
+{
+    for (UIButton *button in array)
+    {
+        button.layer.borderColor = color.CGColor;
+        button.layer.borderWidth = width;
+    }
+}
+
 -(NSString *) convertDecimalToRoundedString:(NSNumber *)number
 {
     CGFloat convertNumber = [number floatValue];

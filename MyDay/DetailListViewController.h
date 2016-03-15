@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) List *toDoList;
 @property (strong, nonatomic) NSArray *toDoItems;
+@property NSString *listName;
 
 @end

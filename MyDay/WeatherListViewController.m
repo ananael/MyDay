@@ -202,11 +202,12 @@
     //To resolve, the cells named in the "IF" statement were given a color in the lines above.
     if (indexPath.row == 0)
     {
-        UIView *border = [UIView new];
-        border.backgroundColor = [UIColor blackColor];
-        [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin];
-        border.frame = CGRectMake(0, 0, cell.frame.size.width, borderWidth);
-        [cell addSubview:border];
+//        UIView *border = [UIView new];
+//        border.backgroundColor = [UIColor blackColor];
+//        [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin];
+//        border.frame = CGRectMake(0, 0, cell.frame.size.width, borderWidth);
+//        [cell addSubview:border];
+        [self.method addTopBorderWithColor:[UIColor blackColor] andWidth:borderWidth to:cell];
         
         cell.dayLabel.text = @"now";
         cell.dayLabel.textColor = [UIColor whiteColor];
@@ -217,11 +218,12 @@
         
     }
     
-    UIView *border = [UIView new];
-    border.backgroundColor = [UIColor blackColor];
-    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
-    border.frame = CGRectMake(0, cell.frame.size.height - borderWidth, cell.frame.size.width, borderWidth);
-    [cell addSubview:border];
+//    UIView *border = [UIView new];
+//    border.backgroundColor = [UIColor blackColor];
+//    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+//    border.frame = CGRectMake(0, cell.frame.size.height - borderWidth, cell.frame.size.width, borderWidth);
+//    [cell addSubview:border];
+    [self.method addBottomBorderWithColor:[UIColor blackColor] andWidth:borderWidth to:cell];
  
     return cell;
  }

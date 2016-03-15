@@ -215,42 +215,7 @@
     
     return cell;
 }
-/*
-#pragma mark - CLLocationManager methods
 
-//Used in NSLog
--(NSString *) deviceLocation
-{
-    return [NSString stringWithFormat:@"latitude: %f  longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
-}
-
--(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
-{
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-    {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
-}
-
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"There was an error retrieving your location" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [errorAlert addAction:okButton];
-    
-    [self presentViewController:errorAlert animated:YES completion:nil];
-    
-    NSLog(@"Error: %@",error.description);
-}
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    CLLocation *crnLoc = [locations lastObject];
-    
-    [self.locationManager stopUpdatingLocation];
-    
-    NSLog(@"From the method: %@", crnLoc);
-}
-*/
 #pragma mark - Buttons
 
 - (IBAction)forecastTapped:(id)sender

@@ -37,11 +37,10 @@
     self.tableView.dataSource = self;
     
     self.navBar.barTintColor = [UIColor whiteColor];
-    self.navBar.topItem.title = @"";
+    self.navBar.topItem.title = self.toDoList.listName;
     self.navBar.translucent = NO;
     
     self.toDoItems = [self.toDoList.item allObjects];
-    
     
 }
 

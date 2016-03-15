@@ -11,6 +11,10 @@
 
 @interface MethodsCache : NSObject
 
+-(void)centerButtonText:(NSArray *)array;
+-(void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view;
+-(void)addBottomBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view;
+-(void)buttonBorderColor:(UIColor *)color andWidth:(NSInteger)width forArray:(NSArray *)array;
 -(NSString *) convertDecimalToRoundedString:(NSNumber *)number;
 -(NSString *) convertToTemperature:(NSNumber *)number;
 -(NSString *) convertToHumidity:(NSNumber *)number;
