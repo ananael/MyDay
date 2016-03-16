@@ -60,6 +60,11 @@
     
     self.method = [MethodsCache new];
     
+    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button gold"] forState:UIControlStateNormal];
+    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button gold"] forState:UIControlStateNormal];
+    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button gold"] forState:UIControlStateNormal];
+    [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
+    
     self.dayArray = [NSMutableArray new];
     self.detailArray = [NSMutableArray new];
     self.dateArray = [NSMutableArray new];
@@ -129,6 +134,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSArray *)buttonArray
+{
+    NSArray *buttons = @[self.homeButton, self.todoButton, self.rssButton];
+    return buttons;
 }
 
 #pragma mark - Table view data source

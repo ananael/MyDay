@@ -8,6 +8,7 @@
 
 #import "ToDoListViewController.h"
 #import "ListDataStore.h"
+#import "MethodsCache.h"
 #import "List+CoreDataProperties.h"
 #import "DetailListViewController.h"
 #import "WeatherListViewController.h"
@@ -26,6 +27,7 @@
 
 @property (strong, nonatomic) ListDataStore *store;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property MethodsCache *method;
 
 - (IBAction)homeTapped:(id)sender;
 - (IBAction)forecastTapped:(id)sender;
@@ -44,12 +46,21 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     self.navBar.barTintColor = [UIColor whiteColor];
     self.navBar.topItem.title = @"To-Do Lists";
     self.navBar.translucent = NO;
     
+    self.backgroundView.backgroundColor = [UIColor colorWithRed:141.0/255.0 green:188.0/255.0 blue:143.0/255.0 alpha:0.7];
+    
+    self.method = [MethodsCache new];
+    
     self.forecastButton.hidden = YES;
+    
+    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button gold"] forState:UIControlStateNormal];
+    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button gold"] forState:UIControlStateNormal];
+    [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
     
     //Creates fetch request
     NSFetchRequest *listFetch = [NSFetchRequest fetchRequestWithEntityName:@"List"];
@@ -93,6 +104,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSArray *)buttonArray
+{
+    NSArray *buttons = @[self.homeButton, self.rssButton];
+    return buttons;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -117,7 +134,8 @@
     cell.textLabel.text = eachList.listName;
     
     //Makes each cell transparent to see background
-    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.3];
+    [self.method addBottomBorderWithColor:[UIColor whiteColor] andWidth:1.0 to:cell];
     
     return cell;
     

@@ -12,8 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
-- (IBAction)doneTapped:(id)sender;
+- (IBAction)backTapped:(id)sender;
 
 @end
 
@@ -28,6 +29,9 @@
     
     self.webView.delegate = self;
     self.webView.scalesPageToFit = YES;
+    
+    self.backButton.title = @"Back";
+    self.backButton.tintColor = [UIColor blueColor];
     
     NSURL *url = [NSURL URLWithString:[self.url stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     
@@ -69,7 +73,7 @@
 }
 */
 
-- (IBAction)doneTapped:(id)sender
+- (IBAction)backTapped:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -74,6 +74,11 @@
     
     self.method = [MethodsCache new];
     
+    [self.forecastButton setBackgroundImage:[UIImage imageNamed:@"forecast button gold"] forState:UIControlStateNormal];
+    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button gold"] forState:UIControlStateNormal];
+    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button gold"] forState:UIControlStateNormal];
+    [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
+    
     //Initialzes Mutable Arrays
     self.timeArray = [NSMutableArray new];
     self.iconArray = [NSMutableArray new];
@@ -132,6 +137,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSArray *)buttonArray
+{
+    NSArray *buttons = @[self.forecastButton, self.todoButton, self.rssButton];
+    return buttons;
 }
 
 - (void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth {

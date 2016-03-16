@@ -222,11 +222,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAf-iV-NJw" userLabel="buttonContainer">
                                         <rect key="frame" x="20" y="540" width="560" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shD-td-ifJ" userLabel="forecastButton">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shD-td-ifJ" userLabel="forecastButton">
                                                 <rect key="frame" x="20" y="0.0" width="160" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="7-Day">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -234,11 +233,10 @@
                                                     <segue destination="qeq-FD-EGU" kind="show" identifier="weeklySegue" id="PPA-sS-4id"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dX-MB-Vnu" userLabel="todoButton">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dX-MB-Vnu" userLabel="todoButton">
                                                 <rect key="frame" x="200" y="0.0" width="160" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="To Do">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -246,11 +244,10 @@
                                                     <segue destination="U8c-dz-bZe" kind="show" identifier="todo1Segue" id="oCd-Sr-CRi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4n-v5-WlA" userLabel="rssButton">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4n-v5-WlA" userLabel="rssButton">
                                                 <rect key="frame" x="380" y="0.0" width="160" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.1581900168" blue="0.0859375" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="RSS">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -356,15 +353,15 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TF2-EO-bfr" userLabel="backgroundImage">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jAV-h6-u4H">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jAV-h6-u4H">
                                         <rect key="frame" x="0.0" y="64" width="600" height="466"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" id="0o2-s1-bVO">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" id="0o2-s1-bVO">
                                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0o2-s1-bVO" id="i66-Av-K2z">
-                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -378,9 +375,8 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NK-2e-CMo" userLabel="homeButton">
                                                 <rect key="frame" x="40" y="0.0" width="160" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="HOME">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -400,9 +396,8 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n20-YP-0P2" userLabel="rssButton">
                                                 <rect key="frame" x="400" y="0.0" width="160" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.1581900168" blue="0.0859375" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="RSS">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -442,7 +437,6 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="jAV-h6-u4H" secondAttribute="trailing" id="0Ze-9C-LuI"/>
                                     <constraint firstItem="TF2-EO-bfr" firstAttribute="leading" secondItem="G5v-kV-aT1" secondAttribute="leading" id="22N-AR-hiw"/>
@@ -510,83 +504,52 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFS-pt-Hlu" userLabel="topContainer">
                                         <rect key="frame" x="0.0" y="20" width="600" height="140"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aMm-dP-vaf">
-                                                <rect key="frame" x="10" y="10" width="120" height="120"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjC-7y-RbW" userLabel="rssContainer">
-                                                <rect key="frame" x="130" y="10" width="430" height="120"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wti-3Z-MK0" userLabel="buttonA">
-                                                        <rect key="frame" x="5" y="0.0" width="200" height="55"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
-                                                        <state key="normal" title="ButtonA">
-                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="buttonATapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="4qe-Cw-xsl"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-nt-Sq4" userLabel="buttonB">
-                                                        <rect key="frame" x="220" y="0.0" width="200" height="55"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
-                                                        <state key="normal" title="ButtonB">
-                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="buttonBTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="fft-ra-z8B"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-1y-BO8" userLabel="buttonC">
-                                                        <rect key="frame" x="5" y="65" width="200" height="55"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
-                                                        <state key="normal" title="ButtonC">
-                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="buttonCTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="z6z-nF-BEu"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qeL-G8-M1g" userLabel="buttonD">
-                                                        <rect key="frame" x="220" y="65" width="200" height="55"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
-                                                        <state key="normal" title="ButtonD">
-                                                            <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="buttonDTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="b7W-Jt-XkM"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="qeL-G8-M1g" secondAttribute="bottom" id="269-Ut-uR7"/>
-                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="leading" secondItem="dxI-1y-BO8" secondAttribute="trailing" constant="20" id="4EF-VY-9aG"/>
-                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="height" secondItem="wti-3Z-MK0" secondAttribute="height" id="4eH-8A-LQI"/>
-                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="top" secondItem="BjC-7y-RbW" secondAttribute="top" id="4o9-He-B8F"/>
-                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="height" secondItem="wti-3Z-MK0" secondAttribute="height" id="7a8-5l-25F"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5yL-nt-Sq4" secondAttribute="trailing" constant="10" id="B4U-En-AwG"/>
-                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="leading" secondItem="BjC-7y-RbW" secondAttribute="leading" constant="5" id="BBJ-TJ-vp7"/>
-                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="top" secondItem="wti-3Z-MK0" secondAttribute="bottom" constant="10" id="Bh9-lu-iMs"/>
-                                                    <constraint firstItem="dxI-1y-BO8" firstAttribute="width" secondItem="wti-3Z-MK0" secondAttribute="width" id="C92-EA-gQB"/>
-                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="width" secondItem="wti-3Z-MK0" secondAttribute="width" id="COg-B3-bhc"/>
-                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="height" secondItem="BjC-7y-RbW" secondAttribute="height" multiplier="0.45833" id="H0v-7t-waS"/>
-                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="width" secondItem="BjC-7y-RbW" secondAttribute="width" multiplier="0.456512" id="HkB-PG-pEd"/>
-                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="width" secondItem="wti-3Z-MK0" secondAttribute="width" id="SPM-0i-sbV"/>
-                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="top" secondItem="5yL-nt-Sq4" secondAttribute="bottom" constant="10" id="YV7-4X-v77"/>
-                                                    <constraint firstAttribute="bottom" secondItem="dxI-1y-BO8" secondAttribute="bottom" id="Yza-Vc-ANn"/>
-                                                    <constraint firstItem="5yL-nt-Sq4" firstAttribute="leading" secondItem="wti-3Z-MK0" secondAttribute="trailing" constant="20" id="eaa-2e-G4U"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qeL-G8-M1g" secondAttribute="trailing" constant="10" id="oYP-wW-BeA"/>
-                                                    <constraint firstItem="qeL-G8-M1g" firstAttribute="height" secondItem="wti-3Z-MK0" secondAttribute="height" id="pI2-Xw-kgM"/>
-                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="top" secondItem="BjC-7y-RbW" secondAttribute="top" id="pmW-6X-cmZ"/>
-                                                    <constraint firstItem="wti-3Z-MK0" firstAttribute="leading" secondItem="BjC-7y-RbW" secondAttribute="leading" constant="5" id="sdx-N0-zzd"/>
-                                                </constraints>
-                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wti-3Z-MK0" userLabel="buttonA">
+                                                <rect key="frame" x="10" y="10" width="225" height="55"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                <state key="normal" title="ButtonA">
+                                                    <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonATapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="4qe-Cw-xsl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-nt-Sq4" userLabel="buttonB">
+                                                <rect key="frame" x="260" y="10" width="225" height="55"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                <state key="normal" title="ButtonB">
+                                                    <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonBTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="fft-ra-z8B"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-1y-BO8" userLabel="buttonC">
+                                                <rect key="frame" x="10" y="75" width="225" height="55"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                <state key="normal" title="ButtonC">
+                                                    <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonCTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="z6z-nF-BEu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qeL-G8-M1g" userLabel="buttonD">
+                                                <rect key="frame" x="260" y="75" width="225" height="55"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                <state key="normal" title="ButtonD">
+                                                    <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonDTapped:" destination="GYO-LX-5xX" eventType="touchUpInside" id="b7W-Jt-XkM"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="thA-PR-1sj" userLabel="closeButton">
-                                                <rect key="frame" x="560" y="10" width="30" height="120"/>
+                                                <rect key="frame" x="540" y="10" width="50" height="120"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
                                                 <state key="normal" title="C">
@@ -672,24 +635,35 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="aMm-dP-vaf" secondAttribute="bottom" constant="10" id="1JN-pd-qPA"/>
-                                            <constraint firstItem="BjC-7y-RbW" firstAttribute="bottom" secondItem="thA-PR-1sj" secondAttribute="bottom" id="78E-JA-bq6"/>
-                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" constant="10" id="HTx-iN-Wfa"/>
-                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.2" id="K7E-QG-tgL"/>
-                                            <constraint firstItem="BjC-7y-RbW" firstAttribute="leading" secondItem="aMm-dP-vaf" secondAttribute="trailing" id="ScU-zm-R5u"/>
+                                            <constraint firstItem="dxI-1y-BO8" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.375" id="15X-Nz-rcU"/>
+                                            <constraint firstItem="qeL-G8-M1g" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.375" id="3FF-UF-IrD"/>
+                                            <constraint firstItem="qeL-G8-M1g" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.3929" id="3K2-y9-rwg"/>
+                                            <constraint firstItem="wti-3Z-MK0" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.3929" id="BPC-r3-RHy"/>
+                                            <constraint firstItem="wti-3Z-MK0" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" constant="10" id="Bkv-jS-3GN"/>
+                                            <constraint firstItem="qeL-G8-M1g" firstAttribute="leading" secondItem="dxI-1y-BO8" secondAttribute="trailing" constant="25" id="EDD-P7-LVJ"/>
+                                            <constraint firstItem="5yL-nt-Sq4" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.375" id="GVJ-fy-6ov"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="leading" secondItem="qeL-G8-M1g" secondAttribute="trailing" constant="55" id="LOU-or-iKp"/>
+                                            <constraint firstItem="wti-3Z-MK0" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.375" id="NXb-I2-ksp"/>
+                                            <constraint firstItem="qeL-G8-M1g" firstAttribute="top" secondItem="5yL-nt-Sq4" secondAttribute="bottom" constant="10" id="Q4v-W8-OvE"/>
                                             <constraint firstItem="7Nc-jW-FYj" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" id="SlQ-JD-dFa"/>
+                                            <constraint firstItem="5yL-nt-Sq4" firstAttribute="leading" secondItem="wti-3Z-MK0" secondAttribute="trailing" constant="25" id="UKW-AC-Qw7"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.8571" id="VVE-ce-KbI"/>
+                                            <constraint firstItem="dxI-1y-BO8" firstAttribute="leading" secondItem="UFS-pt-Hlu" secondAttribute="leading" constant="10" id="WCh-yN-42Q"/>
                                             <constraint firstAttribute="trailing" secondItem="7Nc-jW-FYj" secondAttribute="trailing" id="e3y-0r-QXG"/>
-                                            <constraint firstAttribute="bottom" secondItem="thA-PR-1sj" secondAttribute="bottom" constant="10" id="hAf-qU-y5Y"/>
-                                            <constraint firstItem="BjC-7y-RbW" firstAttribute="top" secondItem="thA-PR-1sj" secondAttribute="top" id="hJD-Ih-C30"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" constant="10" id="eXQ-eP-NlZ"/>
+                                            <constraint firstItem="5yL-nt-Sq4" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.3929" id="fBg-1T-5Qb"/>
+                                            <constraint firstAttribute="bottom" secondItem="thA-PR-1sj" secondAttribute="bottom" constant="10" id="gRK-sP-Xrd"/>
+                                            <constraint firstAttribute="bottom" secondItem="dxI-1y-BO8" secondAttribute="bottom" constant="10" id="gWm-Dn-uQG"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.08333" id="gwR-aY-Grt"/>
+                                            <constraint firstItem="thA-PR-1sj" firstAttribute="leading" secondItem="5yL-nt-Sq4" secondAttribute="trailing" constant="55" id="hxY-g4-7vV"/>
+                                            <constraint firstAttribute="trailing" secondItem="thA-PR-1sj" secondAttribute="trailing" constant="10" id="ikM-VE-FO6"/>
+                                            <constraint firstItem="wti-3Z-MK0" firstAttribute="leading" secondItem="UFS-pt-Hlu" secondAttribute="leading" constant="10" id="isJ-HQ-FUv"/>
+                                            <constraint firstAttribute="bottom" secondItem="qeL-G8-M1g" secondAttribute="bottom" constant="10" id="jgt-Sx-jW9"/>
                                             <constraint firstAttribute="bottom" secondItem="7Nc-jW-FYj" secondAttribute="bottom" id="kCh-rR-GT6"/>
                                             <constraint firstItem="7Nc-jW-FYj" firstAttribute="leading" secondItem="UFS-pt-Hlu" secondAttribute="leading" id="lXf-ys-lVX"/>
-                                            <constraint firstItem="thA-PR-1sj" firstAttribute="leading" secondItem="BjC-7y-RbW" secondAttribute="trailing" id="lkr-E2-kao"/>
-                                            <constraint firstAttribute="trailing" secondItem="thA-PR-1sj" secondAttribute="trailing" constant="10" id="m0N-gb-r2E"/>
-                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.8571" id="nJk-3X-pKd"/>
-                                            <constraint firstItem="thA-PR-1sj" firstAttribute="width" secondItem="UFS-pt-Hlu" secondAttribute="width" multiplier="0.05" id="uQj-qu-gZj"/>
-                                            <constraint firstItem="aMm-dP-vaf" firstAttribute="leading" secondItem="UFS-pt-Hlu" secondAttribute="leading" constant="10" id="wGw-uN-IEN"/>
-                                            <constraint firstItem="thA-PR-1sj" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.8571" id="wPt-9m-S3N"/>
-                                            <constraint firstItem="thA-PR-1sj" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" constant="10" id="zHV-uq-R9k"/>
+                                            <constraint firstItem="dxI-1y-BO8" firstAttribute="top" secondItem="wti-3Z-MK0" secondAttribute="bottom" constant="10" id="qpg-WS-Qbz"/>
+                                            <constraint firstItem="5yL-nt-Sq4" firstAttribute="top" secondItem="UFS-pt-Hlu" secondAttribute="top" constant="10" id="r9J-oa-VW0"/>
+                                            <constraint firstItem="dxI-1y-BO8" firstAttribute="height" secondItem="UFS-pt-Hlu" secondAttribute="height" multiplier="0.3929" id="uYf-XD-byP"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jda-Mp-pVc" userLabel="labelContainer">
@@ -710,7 +684,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5r5-lf-oot">
-                                        <rect key="frame" x="0.0" y="195" width="600" height="340"/>
+                                        <rect key="frame" x="0.0" y="195" width="600" height="335"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rssCell" id="rMZ-tP-Jfb">
@@ -731,9 +705,8 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiM-RA-b86" userLabel="homeButton">
                                                 <rect key="frame" x="40" y="0.0" width="160" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="HOME">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -750,9 +723,8 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rak-Yc-YPc" userLabel="todoButton">
                                                 <rect key="frame" x="400" y="0.0" width="160" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.1581900168" blue="0.0859375" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                <state key="normal" title="To Do">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -804,7 +776,7 @@
                                     <constraint firstItem="5r5-lf-oot" firstAttribute="top" secondItem="jda-Mp-pVc" secondAttribute="bottom" constant="5" id="qrO-tl-bbd"/>
                                     <constraint firstItem="5r5-lf-oot" firstAttribute="leading" secondItem="nFa-n9-3hs" secondAttribute="leading" id="tYq-9g-jkF"/>
                                     <constraint firstItem="UFS-pt-Hlu" firstAttribute="height" secondItem="nFa-n9-3hs" secondAttribute="height" multiplier="0.2333" id="xob-Ve-kpq"/>
-                                    <constraint firstItem="Us7-xr-GKr" firstAttribute="top" secondItem="5r5-lf-oot" secondAttribute="bottom" constant="5" id="ywl-HX-X4R"/>
+                                    <constraint firstItem="Us7-xr-GKr" firstAttribute="top" secondItem="5r5-lf-oot" secondAttribute="bottom" constant="10" id="ywl-HX-X4R"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -833,8 +805,6 @@
                         <outlet property="rssButtonB" destination="5yL-nt-Sq4" id="SQu-Wn-HbU"/>
                         <outlet property="rssButtonC" destination="dxI-1y-BO8" id="7GA-Jg-U6i"/>
                         <outlet property="rssButtonD" destination="qeL-G8-M1g" id="q4x-KM-nje"/>
-                        <outlet property="rssContainer" destination="BjC-7y-RbW" id="Fhp-H6-ope"/>
-                        <outlet property="rssImage" destination="aMm-dP-vaf" id="cD8-Ge-O8w"/>
                         <outlet property="rssLabel" destination="MyV-3m-6yi" id="uVS-tQ-tgp"/>
                         <outlet property="tableView" destination="5r5-lf-oot" id="z4x-WC-6uu"/>
                         <outlet property="todoButton" destination="rak-Yc-YPc" id="I8s-Cy-Md6"/>
@@ -875,9 +845,9 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Yg7-CY-85t"/>
-                                    <barButtonItem systemItem="done" id="zcZ-cV-poE">
+                                    <barButtonItem title="Item" id="zcZ-cV-poE">
                                         <connections>
-                                            <action selector="doneTapped:" destination="Fgn-h9-arp" id="F3B-jZ-UNX"/>
+                                            <action selector="backTapped:" destination="Fgn-h9-arp" id="azG-af-5Jc"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="oAs-Qw-DiN"/>
@@ -912,6 +882,7 @@
                     </view>
                     <connections>
                         <outlet property="actInd" destination="rbo-vJ-qgy" id="elS-8S-7sC"/>
+                        <outlet property="backButton" destination="zcZ-cV-poE" id="0j0-PP-Ye3"/>
                         <outlet property="toolBar" destination="mkY-hI-C2D" id="UJN-Vu-nBk"/>
                         <outlet property="webView" destination="gdo-6O-XbZ" id="m33-3J-Bse"/>
                     </connections>
@@ -954,7 +925,7 @@
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name Your List" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ME9-0H-SE6" userLabel="titleField">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.53367552009999997" blue="0.51704722579999995" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.73725490199999999" blue="0.56078431370000004" alpha="0.59884159482758625" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9eb-8q-pPz"/>
                                 </constraints>
@@ -1281,22 +1252,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mli-aU-Lqy" userLabel="buttonContainer">
                                 <rect key="frame" x="20" y="540" width="560" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoi-la-hyD" userLabel="forecastButton">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoi-la-hyD" userLabel="forecastButton">
                                         <rect key="frame" x="20" y="0.0" width="160" height="50"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                        <state key="normal" title="HOME">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="homeTapped:" destination="qeq-FD-EGU" eventType="touchUpInside" id="1wd-hQ-rPa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVH-j2-WfV" userLabel="todoButton">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVH-j2-WfV" userLabel="todoButton">
                                         <rect key="frame" x="200" y="0.0" width="160" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                        <state key="normal" title="To Do">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1306,13 +1275,13 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4A-9C-TME" userLabel="rssButton">
                                         <rect key="frame" x="380" y="0.0" width="160" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.1581900168" blue="0.0859375" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                        <state key="normal" title="RSS">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="rssTapped:" destination="qeq-FD-EGU" eventType="touchUpInside" id="mO3-zb-TAu"/>
+                                            <segue destination="GYO-LX-5xX" kind="show" id="Bdw-VK-Xyg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1387,7 +1356,7 @@
         <image name="broken circles.png" width="521" height="521"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EZn-5E-iBm"/>
         <segue reference="UpY-8i-ct1"/>
+        <segue reference="EZn-5E-iBm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2034A701C976BDB00A5911D /* business.png in Resources */ = {isa = PBXBuildFile; fileRef = D2034A6C1C976BDB00A5911D /* business.png */; };
-		D2034A711C976BDB00A5911D /* scitech.png in Resources */ = {isa = PBXBuildFile; fileRef = D2034A6D1C976BDB00A5911D /* scitech.png */; };
-		D2034A721C976BDB00A5911D /* theater masks.png in Resources */ = {isa = PBXBuildFile; fileRef = D2034A6E1C976BDB00A5911D /* theater masks.png */; };
-		D2034A731C976BDB00A5911D /* world news.png in Resources */ = {isa = PBXBuildFile; fileRef = D2034A6F1C976BDB00A5911D /* world news.png */; };
+		D20A359B1C99E4EC0000BF07 /* forecast button gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D20A359A1C99E4EC0000BF07 /* forecast button gold@2x.png */; };
+		D20A359D1C99E54F0000BF07 /* forecast button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D20A359C1C99E54F0000BF07 /* forecast button@2x.png */; };
+		D20A35A01C99FCD10000BF07 /* home button gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D20A359E1C99FCD10000BF07 /* home button gold@2x.png */; };
+		D20A35A11C99FCD10000BF07 /* home button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D20A359F1C99FCD10000BF07 /* home button@2x.png */; };
 		D261F6A51C8A132200CD30F2 /* MethodsCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D261F6A41C8A132200CD30F2 /* MethodsCache.m */; };
 		D261F6A81C8A137000CD30F2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D261F6A71C8A137000CD30F2 /* Constants.m */; };
 		D261F6B61C8A297F00CD30F2 /* icon-white-cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = D261F6AB1C8A297F00CD30F2 /* icon-white-cloudy.png */; };
@@ -51,6 +51,10 @@
 		D27B53E61C893B9C00C7F71F /* WeatherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27B53E51C893B9C00C7F71F /* WeatherListViewController.m */; };
 		D27B53E91C893E5D00C7F71F /* WeatherListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D27B53E81C893E5D00C7F71F /* WeatherListTableViewCell.m */; };
 		D27B53EE1C89633200C7F71F /* paisley sky citrine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D27B53ED1C89633200C7F71F /* paisley sky citrine@2x.png */; };
+		D2B3AD021C99C13B003706B2 /* todo button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3AD011C99C13B003706B2 /* todo button@2x.png */; };
+		D2B3AD081C99C559003706B2 /* rss button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3AD071C99C559003706B2 /* rss button@2x.png */; };
+		D2B3AD0D1C99C70D003706B2 /* todo button gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3AD0A1C99C70D003706B2 /* todo button gold@2x.png */; };
+		D2B3AD0E1C99C70D003706B2 /* rss button gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3AD0B1C99C70D003706B2 /* rss button gold@2x.png */; };
 		D2C72BB81C8DE48000813FB5 /* OpeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BB71C8DE48000813FB5 /* OpeningViewController.m */; };
 		D2C72BBB1C8F397800813FB5 /* ListDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BBA1C8F397800813FB5 /* ListDataStore.m */; };
 		D2C72BCA1C8F452B00813FB5 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BC91C8F452B00813FB5 /* ToDoListViewController.m */; };
@@ -84,10 +88,10 @@
 
 /* Begin PBXFileReference section */
 		AF7543145737EEE4914CD085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2034A6C1C976BDB00A5911D /* business.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = business.png; sourceTree = "<group>"; };
-		D2034A6D1C976BDB00A5911D /* scitech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scitech.png; sourceTree = "<group>"; };
-		D2034A6E1C976BDB00A5911D /* theater masks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theater masks.png"; sourceTree = "<group>"; };
-		D2034A6F1C976BDB00A5911D /* world news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world news.png"; sourceTree = "<group>"; };
+		D20A359A1C99E4EC0000BF07 /* forecast button gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forecast button gold@2x.png"; sourceTree = "<group>"; };
+		D20A359C1C99E54F0000BF07 /* forecast button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forecast button@2x.png"; sourceTree = "<group>"; };
+		D20A359E1C99FCD10000BF07 /* home button gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home button gold@2x.png"; sourceTree = "<group>"; };
+		D20A359F1C99FCD10000BF07 /* home button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home button@2x.png"; sourceTree = "<group>"; };
 		D261F6A31C8A132100CD30F2 /* MethodsCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodsCache.h; sourceTree = "<group>"; };
 		D261F6A41C8A132200CD30F2 /* MethodsCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodsCache.m; sourceTree = "<group>"; };
 		D261F6A61C8A137000CD30F2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -141,6 +145,10 @@
 		D27B53E71C893E5D00C7F71F /* WeatherListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherListTableViewCell.h; sourceTree = "<group>"; };
 		D27B53E81C893E5D00C7F71F /* WeatherListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherListTableViewCell.m; sourceTree = "<group>"; };
 		D27B53ED1C89633200C7F71F /* paisley sky citrine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky citrine@2x.png"; sourceTree = "<group>"; };
+		D2B3AD011C99C13B003706B2 /* todo button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo button@2x.png"; sourceTree = "<group>"; };
+		D2B3AD071C99C559003706B2 /* rss button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rss button@2x.png"; sourceTree = "<group>"; };
+		D2B3AD0A1C99C70D003706B2 /* todo button gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo button gold@2x.png"; sourceTree = "<group>"; };
+		D2B3AD0B1C99C70D003706B2 /* rss button gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rss button gold@2x.png"; sourceTree = "<group>"; };
 		D2C72BB61C8DE48000813FB5 /* OpeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningViewController.h; sourceTree = "<group>"; };
 		D2C72BB71C8DE48000813FB5 /* OpeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningViewController.m; sourceTree = "<group>"; };
 		D2C72BB91C8F397800813FB5 /* ListDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataStore.h; sourceTree = "<group>"; };
@@ -203,15 +211,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D2034A6B1C976BCB00A5911D /* rss icons */ = {
+		D20A35A21C99FDA00000BF07 /* red */ = {
 			isa = PBXGroup;
 			children = (
-				D2034A6C1C976BDB00A5911D /* business.png */,
-				D2034A6D1C976BDB00A5911D /* scitech.png */,
-				D2034A6E1C976BDB00A5911D /* theater masks.png */,
-				D2034A6F1C976BDB00A5911D /* world news.png */,
+				D20A359C1C99E54F0000BF07 /* forecast button@2x.png */,
+				D20A359F1C99FCD10000BF07 /* home button@2x.png */,
+				D2B3AD071C99C559003706B2 /* rss button@2x.png */,
+				D2B3AD011C99C13B003706B2 /* todo button@2x.png */,
 			);
-			name = "rss icons";
+			name = red;
+			sourceTree = "<group>";
+		};
+		D20A35A31C99FDAC0000BF07 /* gold */ = {
+			isa = PBXGroup;
+			children = (
+				D20A359A1C99E4EC0000BF07 /* forecast button gold@2x.png */,
+				D20A359E1C99FCD10000BF07 /* home button gold@2x.png */,
+				D2B3AD0B1C99C70D003706B2 /* rss button gold@2x.png */,
+				D2B3AD0A1C99C70D003706B2 /* todo button gold@2x.png */,
+			);
+			name = gold;
 			sourceTree = "<group>";
 		};
 		D261F6A91C8A283600CD30F2 /* black */ = {
@@ -351,7 +370,8 @@
 		D27B52EF1C812EEE00C7F71F /* Visual Assets */ = {
 			isa = PBXGroup;
 			children = (
-				D2034A6B1C976BCB00A5911D /* rss icons */,
+				D20A35A31C99FDAC0000BF07 /* gold */,
+				D20A35A21C99FDA00000BF07 /* red */,
 				D27B53CB1C88FAD000C7F71F /* weather icons */,
 				D27B52ED1C810BAA00C7F71F /* broken circles@2x.png */,
 				D27B53ED1C89633200C7F71F /* paisley sky citrine@2x.png */,
@@ -487,33 +507,37 @@
 			files = (
 				D261F6B61C8A297F00CD30F2 /* icon-white-cloudy.png in Resources */,
 				D27B53DC1C88FB4600C7F71F /* icon-black-rain-cloud.png in Resources */,
+				D20A359D1C99E54F0000BF07 /* forecast button@2x.png in Resources */,
 				D261F6B91C8A297F00CD30F2 /* icon-white-pc-day.png in Resources */,
-				D2034A711C976BDB00A5911D /* scitech.png in Resources */,
 				D27B53D91C88FB4600C7F71F /* icon-black-moon.png in Resources */,
 				D261F6C01C8A297F00CD30F2 /* icon-white-tornado.png in Resources */,
-				D2034A731C976BDB00A5911D /* world news.png in Resources */,
+				D20A359B1C99E4EC0000BF07 /* forecast button gold@2x.png in Resources */,
 				D27B52EE1C810BAA00C7F71F /* broken circles@2x.png in Resources */,
 				D27B53DD1C88FB4600C7F71F /* icon-black-snowfall.png in Resources */,
 				D261F6BA1C8A297F00CD30F2 /* icon-white-pc-night.png in Resources */,
+				D2B3AD0E1C99C70D003706B2 /* rss button gold@2x.png in Resources */,
 				D27B53DF1C88FB4600C7F71F /* icon-black-sunny.png in Resources */,
 				D27B53EE1C89633200C7F71F /* paisley sky citrine@2x.png in Resources */,
 				D261F6B81C8A297F00CD30F2 /* icon-white-moon.png in Resources */,
 				D261F6BD1C8A297F00CD30F2 /* icon-white-snowflake.png in Resources */,
 				D27B52C81C80F9E300C7F71F /* LaunchScreen.storyboard in Resources */,
+				D2B3AD021C99C13B003706B2 /* todo button@2x.png in Resources */,
 				D27B53DE1C88FB4600C7F71F /* icon-black-snowflake.png in Resources */,
 				D261F6B71C8A297F00CD30F2 /* icon-white-hail.png in Resources */,
 				D27B53D81C88FB4600C7F71F /* icon-black-hail.png in Resources */,
 				D27B52C51C80F9E300C7F71F /* Assets.xcassets in Resources */,
 				D27B53D71C88FB4600C7F71F /* icon-black-cloudy.png in Resources */,
 				D27B53DA1C88FB4600C7F71F /* icon-black-pc-day.png in Resources */,
-				D2034A701C976BDB00A5911D /* business.png in Resources */,
 				D261F6BB1C8A297F00CD30F2 /* icon-white-rain-cloud.png in Resources */,
 				D27B53E11C88FB4600C7F71F /* icon-black-tornado.png in Resources */,
+				D2B3AD081C99C559003706B2 /* rss button@2x.png in Resources */,
 				D261F6BE1C8A297F00CD30F2 /* icon-white-sunny.png in Resources */,
+				D20A35A01C99FCD10000BF07 /* home button gold@2x.png in Resources */,
 				D27B53E31C89002D00C7F71F /* paisley sky lapis@2x.png in Resources */,
+				D2B3AD0D1C99C70D003706B2 /* todo button gold@2x.png in Resources */,
+				D20A35A11C99FCD10000BF07 /* home button@2x.png in Resources */,
 				D261F6BC1C8A297F00CD30F2 /* icon-white-snowfall.png in Resources */,
 				D27B53E01C88FB4600C7F71F /* icon-black-thunderstorm.png in Resources */,
-				D2034A721C976BDB00A5911D /* theater masks.png in Resources */,
 				D27B52C01C80F9E300C7F71F /* Main.storyboard in Resources */,
 				D261F6BF1C8A297F00CD30F2 /* icon-white-thunderstorm.png in Resources */,
 				D27B53DB1C88FB4600C7F71F /* icon-black-pc-night.png in Resources */,

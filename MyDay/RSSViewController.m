@@ -24,8 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *forecastButton;
 @property (weak, nonatomic) IBOutlet UIButton *todoButton;
 
-@property (weak, nonatomic) IBOutlet UIView *rssContainer;
-@property (weak, nonatomic) IBOutlet UIImageView *rssImage;
 @property (weak, nonatomic) IBOutlet UIButton *rssButtonA;
 @property (weak, nonatomic) IBOutlet UIButton *rssButtonB;
 @property (weak, nonatomic) IBOutlet UIButton *rssButtonC;
@@ -77,13 +75,18 @@
     self.method = [MethodsCache new];
     
     self.forecastButton.hidden = YES;
+    
+    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button gold"] forState:UIControlStateNormal];
+    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button gold"] forState:UIControlStateNormal];
+    [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
+    
     [self.closeButton setTitle:@"B\nA\nC\nK" forState:UIControlStateNormal];
     [self.category1 setTitle:@"World News" forState:UIControlStateNormal];
     [self.category2 setTitle:@"Science &\nTechnology" forState:UIControlStateNormal];
     [self.category3 setTitle:@"Business News" forState:UIControlStateNormal];
     [self.category4 setTitle:@"Entertainment" forState:UIControlStateNormal];
-    [self.method centerButtonText:[self buttonArray]];
-    [self.method buttonBorderColor:[UIColor whiteColor] andWidth:2.0 forArray:[self buttonArray]];
+    [self.method centerButtonText:[self rssButtonArray]];
+    [self.method buttonBorderColor:[UIColor whiteColor] andWidth:2.0 forArray:[self rssButtonArray]];
     [self.method addTopBorderWithColor:[UIColor whiteColor] andWidth:2.0 to:self.labelContainer];
     [self.method addBottomBorderWithColor:[UIColor whiteColor] andWidth:2.0 to:self.labelContainer];
     
@@ -94,16 +97,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSArray *)buttonArray
+-(NSArray *)rssButtonArray
 {
     NSArray *buttons = @[self.category1, self.category2, self.category3, self.category4, self.rssButtonA, self.rssButtonB, self.rssButtonC, self.rssButtonD, self.closeButton];
     return  buttons;
 }
 
--(NSArray *)categoryButtonArray
+-(NSArray *)buttonArray
 {
-    NSArray *buttons = @[self.category1, self.category2, self.category3, self.category4];
-    return  buttons;
+    NSArray *buttons = @[self.homeButton, self.todoButton];
+    return buttons;
 }
 
 #pragma mark - Table view data source
@@ -223,32 +226,28 @@
     switch (self.category)
     {
         case 1:
-            [self.rssButtonA setTitle:@"BBC\nWorld" forState:UIControlStateNormal];
+            [self.rssButtonA setTitle:@"BBC News\nWorld" forState:UIControlStateNormal];
             [self.rssButtonB setTitle:@"Reuters\nWorld" forState:UIControlStateNormal];
             [self.rssButtonC setTitle:@"NY Post\nWorld" forState:UIControlStateNormal];
-            [self.rssButtonD setTitle:@"Huffington\nWorld" forState:UIControlStateNormal];
-            self.rssImage.image = [UIImage imageNamed:@"world news"];
+            [self.rssButtonD setTitle:@"Huffington Post\nWorld" forState:UIControlStateNormal];
             break;
         case 2:
-            [self.rssButtonA setTitle:@"BBC\nTechnology" forState:UIControlStateNormal];
+            [self.rssButtonA setTitle:@"BBC News\nTechnology" forState:UIControlStateNormal];
             [self.rssButtonB setTitle:@"Reuters\nScience" forState:UIControlStateNormal];
             [self.rssButtonC setTitle:@"NY Post\nTechnology" forState:UIControlStateNormal];
-            [self.rssButtonD setTitle:@"Huffington\nScience" forState:UIControlStateNormal];
-            self.rssImage.image = [UIImage imageNamed:@"scitech"];
+            [self.rssButtonD setTitle:@"Huffington Post\nScience" forState:UIControlStateNormal];
             break;
         case 3:
-            [self.rssButtonA setTitle:@"BBC\nBusiness" forState:UIControlStateNormal];
+            [self.rssButtonA setTitle:@"BBC News\nBusiness" forState:UIControlStateNormal];
             [self.rssButtonB setTitle:@"Reuters\nBusiness" forState:UIControlStateNormal];
             [self.rssButtonC setTitle:@"NY Post\nBusiness" forState:UIControlStateNormal];
-            [self.rssButtonD setTitle:@"Huffington\nBusiness" forState:UIControlStateNormal];
-            self.rssImage.image = [UIImage imageNamed:@"business"];
+            [self.rssButtonD setTitle:@"Huffington Post\nBusiness" forState:UIControlStateNormal];
             break;
         case 4:
-            [self.rssButtonA setTitle:@"BBC\nEntertainment" forState:UIControlStateNormal];
+            [self.rssButtonA setTitle:@"BBC News\nEntertainment" forState:UIControlStateNormal];
             [self.rssButtonB setTitle:@"Reuters\nEntertainment" forState:UIControlStateNormal];
             [self.rssButtonC setTitle:@"NY Post\nEntertainment" forState:UIControlStateNormal];
-            [self.rssButtonD setTitle:@"Huffington\nEntertainment" forState:UIControlStateNormal];
-            self.rssImage.image = [UIImage imageNamed:@"theater masks"];
+            [self.rssButtonD setTitle:@"Huffington Post\nEntertainment" forState:UIControlStateNormal];
             break;
             
         default:
