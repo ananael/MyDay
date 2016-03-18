@@ -350,7 +350,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5v-kV-aT1" userLabel="backgroundView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TF2-EO-bfr" userLabel="backgroundImage">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TF2-EO-bfr" userLabel="backgroundImage">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jAV-h6-u4H">
@@ -498,7 +498,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-n9-3hs" userLabel="backgroundView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-1s-IbG" userLabel="backgroundImage">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-1s-IbG" userLabel="backgroundImage">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFS-pt-Hlu" userLabel="topContainer">
@@ -611,7 +611,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.15686274509803921" green="0.27058823529411763" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.23137254901960785" green="0.396078431372549" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="5PL-ai-Mbd" firstAttribute="top" secondItem="l2T-mL-b2X" secondAttribute="bottom" constant="10" id="0lw-cr-jfb"/>
                                                     <constraint firstItem="l2T-mL-b2X" firstAttribute="height" secondItem="7Nc-jW-FYj" secondAttribute="height" multiplier="0.3929" id="1JY-iy-oaj"/>
@@ -752,7 +752,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15686274510000001" green="0.27058823529999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="UFS-pt-Hlu" secondAttribute="trailing" id="6tH-VZ-7o0"/>
                                     <constraint firstItem="UFS-pt-Hlu" firstAttribute="top" secondItem="nFa-n9-3hs" secondAttribute="top" constant="20" id="8rX-Oy-jWf"/>
@@ -925,7 +925,7 @@
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name Your List" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ME9-0H-SE6" userLabel="titleField">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <color key="backgroundColor" red="0.55294117649999996" green="0.73725490199999999" blue="0.56078431370000004" alpha="0.59884159482758625" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.73725490199999999" blue="0.56078431370000004" alpha="0.59884159479999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9eb-8q-pPz"/>
                                 </constraints>
@@ -1011,7 +1011,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDj-cy-6Co" userLabel="backgroundView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igU-Bx-jZ0">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igU-Bx-jZ0">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQO-cB-EJW">
@@ -1026,7 +1026,7 @@
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-1U-xSs">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-1U-xSs">
                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -1076,7 +1076,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9s-3a-2l5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3607" y="1151"/>
+            <point key="canvasLocation" x="4355" y="385"/>
         </scene>
         <!--Weather List View Controller-->
         <scene sceneID="2DU-hI-7vB">
@@ -1356,7 +1356,7 @@
         <image name="broken circles.png" width="521" height="521"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UpY-8i-ct1"/>
-        <segue reference="EZn-5E-iBm"/>
+        <segue reference="bfk-YO-aG9"/>
+        <segue reference="oCd-Sr-CRi"/>
     </inferredMetricsTieBreakers>
 </document>

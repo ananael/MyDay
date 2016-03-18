@@ -8,6 +8,7 @@
 
 #import "DetailListViewController.h"
 #import "ListDataStore.h"
+#import "MethodsCache.h"
 #import "Task+CoreDataProperties.h"
 #import "DetailListViewController.h"
 
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property ListDataStore *store;
+@property MethodsCache *method;
 
 - (IBAction)doneTapped:(id)sender;
 
@@ -35,10 +37,15 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     self.navBar.barTintColor = [UIColor whiteColor];
     self.navBar.topItem.title = self.toDoList.listName;
     self.navBar.translucent = NO;
+    
+    self.method = [MethodsCache new];
+    
+    self.backgroundImage.image = [UIImage imageNamed:@"todo background"];
     
     self.toDoItems = [self.toDoList.item allObjects];
     
@@ -79,6 +86,10 @@
     
     //Removes the selected cell's highlight color
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //Makes each cell transparent to see background
+    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.3];
+    [self.method addBottomBorderWithColor:[UIColor whiteColor] andWidth:1.0 to:cell];
     
     return cell;
     

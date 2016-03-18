@@ -18,6 +18,14 @@
     }
 }
 
+-(void)roundButtonCorners:(NSInteger)radius forArray:(NSArray *)array
+{
+    for (UIButton *button in array)
+    {
+        button.layer.cornerRadius = radius;
+    }
+}
+
 -(void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view
 {
     UIView *border = [UIView new];

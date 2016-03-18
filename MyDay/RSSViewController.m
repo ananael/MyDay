@@ -76,9 +76,13 @@
     
     self.forecastButton.hidden = YES;
     
-    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button gold"] forState:UIControlStateNormal];
-    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button gold"] forState:UIControlStateNormal];
+    self.backgroundImage.image = [UIImage imageNamed:@"rss background"];
+    self.backgroundImage.alpha = 0.8;
+    
+    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button"] forState:UIControlStateNormal];
+    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button"] forState:UIControlStateNormal];
     [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
+    [self.method roundButtonCorners:8.0 forArray:[self buttonArray]];
     
     [self.closeButton setTitle:@"B\nA\nC\nK" forState:UIControlStateNormal];
     [self.category1 setTitle:@"World News" forState:UIControlStateNormal];
@@ -87,6 +91,7 @@
     [self.category4 setTitle:@"Entertainment" forState:UIControlStateNormal];
     [self.method centerButtonText:[self rssButtonArray]];
     [self.method buttonBorderColor:[UIColor whiteColor] andWidth:2.0 forArray:[self rssButtonArray]];
+    [self.method roundButtonCorners:8.0 forArray:[self rssButtonArray]];
     [self.method addTopBorderWithColor:[UIColor whiteColor] andWidth:2.0 to:self.labelContainer];
     [self.method addBottomBorderWithColor:[UIColor whiteColor] andWidth:2.0 to:self.labelContainer];
     

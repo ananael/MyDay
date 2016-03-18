@@ -74,10 +74,11 @@
     
     self.method = [MethodsCache new];
     
-    [self.forecastButton setBackgroundImage:[UIImage imageNamed:@"forecast button gold"] forState:UIControlStateNormal];
-    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button gold"] forState:UIControlStateNormal];
-    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button gold"] forState:UIControlStateNormal];
+    [self.forecastButton setBackgroundImage:[UIImage imageNamed:@"forecast button"] forState:UIControlStateNormal];
+    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button"] forState:UIControlStateNormal];
+    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button"] forState:UIControlStateNormal];
     [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
+    [self.method roundButtonCorners:8.0 forArray:[self buttonArray]];
     
     //Initialzes Mutable Arrays
     self.timeArray = [NSMutableArray new];

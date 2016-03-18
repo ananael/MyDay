@@ -12,6 +12,7 @@
 @interface MethodsCache : NSObject
 
 -(void)centerButtonText:(NSArray *)array;
+-(void)roundButtonCorners:(NSInteger)radius forArray:(NSArray *)array;
 -(void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view;
 -(void)addBottomBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view;
 -(void)buttonBorderColor:(UIColor *)color andWidth:(NSInteger)width forArray:(NSArray *)array;

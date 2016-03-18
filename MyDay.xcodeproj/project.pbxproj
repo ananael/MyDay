@@ -66,6 +66,8 @@
 		D2C72BDC1C8FA9D400813FB5 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BD81C8FA9D400813FB5 /* Task.m */; };
 		D2C72BDF1C97167000813FB5 /* RSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BDE1C97167000813FB5 /* RSSViewController.m */; };
 		D2C72BE21C97168600813FB5 /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C72BE11C97168600813FB5 /* RSSDetailViewController.m */; };
+		D2EB4A3E1C9B1F430065CCA5 /* rss background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EB4A3C1C9B1F430065CCA5 /* rss background@2x.png */; };
+		D2EB4A3F1C9B1F430065CCA5 /* todo background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EB4A3D1C9B1F430065CCA5 /* todo background@2x.png */; };
 		D698534B81529DF9044E372B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7543145737EEE4914CD085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +173,8 @@
 		D2C72BDE1C97167000813FB5 /* RSSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSViewController.m; sourceTree = "<group>"; };
 		D2C72BE01C97168600813FB5 /* RSSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSDetailViewController.h; sourceTree = "<group>"; };
 		D2C72BE11C97168600813FB5 /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDetailViewController.m; sourceTree = "<group>"; };
+		D2EB4A3C1C9B1F430065CCA5 /* rss background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rss background@2x.png"; sourceTree = "<group>"; };
+		D2EB4A3D1C9B1F430065CCA5 /* todo background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo background@2x.png"; sourceTree = "<group>"; };
 		EA029945D09DC36BB510170C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F5EBF00CC2A727844972B9DB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -373,6 +377,8 @@
 				D20A35A31C99FDAC0000BF07 /* gold */,
 				D20A35A21C99FDA00000BF07 /* red */,
 				D27B53CB1C88FAD000C7F71F /* weather icons */,
+				D2EB4A3C1C9B1F430065CCA5 /* rss background@2x.png */,
+				D2EB4A3D1C9B1F430065CCA5 /* todo background@2x.png */,
 				D27B52ED1C810BAA00C7F71F /* broken circles@2x.png */,
 				D27B53ED1C89633200C7F71F /* paisley sky citrine@2x.png */,
 				D27B53E21C89002D00C7F71F /* paisley sky lapis@2x.png */,
@@ -512,6 +518,7 @@
 				D27B53D91C88FB4600C7F71F /* icon-black-moon.png in Resources */,
 				D261F6C01C8A297F00CD30F2 /* icon-white-tornado.png in Resources */,
 				D20A359B1C99E4EC0000BF07 /* forecast button gold@2x.png in Resources */,
+				D2EB4A3E1C9B1F430065CCA5 /* rss background@2x.png in Resources */,
 				D27B52EE1C810BAA00C7F71F /* broken circles@2x.png in Resources */,
 				D27B53DD1C88FB4600C7F71F /* icon-black-snowfall.png in Resources */,
 				D261F6BA1C8A297F00CD30F2 /* icon-white-pc-night.png in Resources */,
@@ -529,6 +536,7 @@
 				D27B53D71C88FB4600C7F71F /* icon-black-cloudy.png in Resources */,
 				D27B53DA1C88FB4600C7F71F /* icon-black-pc-day.png in Resources */,
 				D261F6BB1C8A297F00CD30F2 /* icon-white-rain-cloud.png in Resources */,
+				D2EB4A3F1C9B1F430065CCA5 /* todo background@2x.png in Resources */,
 				D27B53E11C88FB4600C7F71F /* icon-black-tornado.png in Resources */,
 				D2B3AD081C99C559003706B2 /* rss button@2x.png in Resources */,
 				D261F6BE1C8A297F00CD30F2 /* icon-white-sunny.png in Resources */,

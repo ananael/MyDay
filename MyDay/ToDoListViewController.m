@@ -52,15 +52,16 @@
     self.navBar.topItem.title = @"To-Do Lists";
     self.navBar.translucent = NO;
     
-    self.backgroundView.backgroundColor = [UIColor colorWithRed:141.0/255.0 green:188.0/255.0 blue:143.0/255.0 alpha:0.7];
+    self.backgroundImage.image = [UIImage imageNamed:@"todo background"];
     
     self.method = [MethodsCache new];
     
     self.forecastButton.hidden = YES;
     
-    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button gold"] forState:UIControlStateNormal];
-    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button gold"] forState:UIControlStateNormal];
+    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button"] forState:UIControlStateNormal];
+    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button"] forState:UIControlStateNormal];
     [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
+    [self.method roundButtonCorners:8.0 forArray:[self buttonArray]];
     
     //Creates fetch request
     NSFetchRequest *listFetch = [NSFetchRequest fetchRequestWithEntityName:@"List"];

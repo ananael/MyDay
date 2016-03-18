@@ -60,10 +60,11 @@
     
     self.method = [MethodsCache new];
     
-    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button gold"] forState:UIControlStateNormal];
-    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button gold"] forState:UIControlStateNormal];
-    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button gold"] forState:UIControlStateNormal];
+    [self.homeButton setBackgroundImage:[UIImage imageNamed:@"home button"] forState:UIControlStateNormal];
+    [self.todoButton setBackgroundImage:[UIImage imageNamed:@"todo button"] forState:UIControlStateNormal];
+    [self.rssButton setBackgroundImage:[UIImage imageNamed:@"rss button"] forState:UIControlStateNormal];
     [self.method buttonBorderColor:[UIColor whiteColor] andWidth:1.0 forArray:[self buttonArray]];
+    [self.method roundButtonCorners:8.0 forArray:[self buttonArray]];
     
     self.dayArray = [NSMutableArray new];
     self.detailArray = [NSMutableArray new];
@@ -121,6 +122,7 @@
         NSString *iconInfo;
         iconInfo = self.resultsDict[@"daily"][@"data"][i][@"icon"];
         [self.iconArray addObject:iconInfo];
+        NSLog(@"What is ICON: %@", self.iconArray);
         
     }
     
@@ -225,7 +227,7 @@
         cell.detailLabel.textColor = [UIColor whiteColor];
         cell.degreeLabel.text = [self.method convertToTemperature:self.resultsDict[@"currently"][@"temperature"]];
         cell.dateLabel.textColor = [UIColor whiteColor];
-        cell.iconImage.image = [self.method stringToIcon:self.iconArray[indexPath.row] Color:@"white"];
+        cell.iconImage.image = [self.method stringToIcon:self.resultsDict[@"currently"][@"icon"] Color:@"white"];
         
     }
     
