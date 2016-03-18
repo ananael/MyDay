@@ -220,8 +220,6 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSString *string = [self.feeds[indexPath.row]objectForKey:@"link"];
         [[segue destinationViewController]setUrl:string];
-//        RSSDetailViewController *rssDetailVC = [segue destinationViewController];
-//        rssDetailVC.url = string;
     }
 }
 
