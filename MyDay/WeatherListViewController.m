@@ -55,7 +55,7 @@
     self.tableView.estimatedRowHeight = 200.0;
     self.tableView.backgroundColor = [UIColor clearColor];
     
-    self.backgroundImage.image = [UIImage imageNamed:@"paisley sky citrine"];
+    self.backgroundImage.image = [UIImage imageNamed:@"forecast background"];
     self.backgroundImage.alpha = 0.8;
     
     self.method = [MethodsCache new];

@@ -285,6 +285,10 @@
     {
         image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-tornado", color]];
     }
+    else if ([string isEqualToString:@"wind"])
+    {
+        image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-windy", color]];
+    }
     return image;
 }
 
