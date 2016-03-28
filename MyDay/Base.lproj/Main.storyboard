@@ -665,7 +665,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jda-Mp-pVc" userLabel="labelContainer">
                                         <rect key="frame" x="0.0" y="160" width="600" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyV-3m-6yi">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyV-3m-6yi">
                                                 <rect key="frame" x="10" y="0.0" width="580" height="30"/>
                                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1354,6 +1354,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bfk-YO-aG9"/>
-        <segue reference="oCd-Sr-CRi"/>
+        <segue reference="UpY-8i-ct1"/>
     </inferredMetricsTieBreakers>
 </document>
