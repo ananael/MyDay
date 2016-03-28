@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ais-b8-G4h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ais-b8-G4h">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -24,19 +24,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNj-In-rg2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kri-PZ-gGo">
-                                        <rect key="frame" x="0.0" y="150" width="600" height="300"/>
-                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="60"/>
-                                        <color key="textColor" red="0.23921568627450979" green="0.28627450980392155" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNX-pL-HbR">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="kri-PZ-gGo" firstAttribute="leading" secondItem="dNj-In-rg2" secondAttribute="leading" id="5xZ-hs-qdb"/>
-                                    <constraint firstItem="kri-PZ-gGo" firstAttribute="top" secondItem="dNj-In-rg2" secondAttribute="top" constant="150" id="AHG-rY-Wm7"/>
-                                    <constraint firstItem="kri-PZ-gGo" firstAttribute="centerY" secondItem="dNj-In-rg2" secondAttribute="centerY" id="GMs-je-zVc"/>
-                                    <constraint firstItem="kri-PZ-gGo" firstAttribute="centerX" secondItem="dNj-In-rg2" secondAttribute="centerX" id="gC8-n9-1C8"/>
-                                    <constraint firstAttribute="trailing" secondItem="kri-PZ-gGo" secondAttribute="trailing" id="kNz-EX-wBb"/>
+                                    <constraint firstItem="fNX-pL-HbR" firstAttribute="top" secondItem="dNj-In-rg2" secondAttribute="top" id="BVb-Jv-ufg"/>
+                                    <constraint firstItem="fNX-pL-HbR" firstAttribute="leading" secondItem="dNj-In-rg2" secondAttribute="leading" id="ceP-mV-Vkq"/>
+                                    <constraint firstAttribute="bottom" secondItem="fNX-pL-HbR" secondAttribute="bottom" id="dLU-iZ-o31"/>
+                                    <constraint firstAttribute="trailing" secondItem="fNX-pL-HbR" secondAttribute="trailing" id="dyv-rI-Fhe"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -50,7 +46,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8MY-oM-ViS"/>
                     <connections>
-                        <outlet property="titleLabel" destination="kri-PZ-gGo" id="nLb-R5-oHK"/>
+                        <outlet property="backgroundImage" destination="fNX-pL-HbR" id="kug-TS-DTY"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="mainSegue" id="95P-ln-gyh"/>
                     </connections>
                 </viewController>
@@ -951,6 +947,7 @@
                                             <constraint firstAttribute="bottom" secondItem="2ZF-Sy-WTx" secondAttribute="bottom" id="8vY-If-Qpt"/>
                                             <constraint firstAttribute="trailing" secondItem="2ZF-Sy-WTx" secondAttribute="trailing" id="IQe-IF-5vc"/>
                                             <constraint firstItem="2ZF-Sy-WTx" firstAttribute="leading" secondItem="wic-Tc-csj" secondAttribute="leading" id="jt6-J5-dih"/>
+                                            <constraint firstItem="2ZF-Sy-WTx" firstAttribute="centerX" secondItem="wic-Tc-csj" secondAttribute="centerX" id="nPz-Sh-hLu"/>
                                             <constraint firstItem="2ZF-Sy-WTx" firstAttribute="top" secondItem="wic-Tc-csj" secondAttribute="top" id="tSd-tv-Ozp"/>
                                         </constraints>
                                     </scrollView>

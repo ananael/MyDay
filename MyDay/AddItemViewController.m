@@ -65,7 +65,6 @@
         border.frame = CGRectMake(0, textbox.frame.size.height - borderWidth, textbox.frame.size.width, textbox.frame.size.height);
         border.borderWidth = borderWidth;
         [textbox.layer addSublayer:border];
-        //textbox.layer.masksToBounds = YES;
         
         //Allows each textbox to respond to UITextField Delegates
         textbox.delegate = self;

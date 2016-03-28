@@ -393,6 +393,8 @@
     self.overlayContainer.hidden = NO;
 }
 
+#pragma mark - Navigation Buttons
+
 - (IBAction)homeTapped:(id)sender
 {
     [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];

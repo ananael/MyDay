@@ -12,7 +12,8 @@
 
 @interface OpeningViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+
 
 @property NSTimer *timer;
 @property NSInteger seconds;
@@ -29,7 +30,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.titleLabel.text = @"My\nDay";
+    self.backgroundImage.animationImages = [self animationArray];
+    self.backgroundImage.animationDuration = 8.0;
+    self.backgroundImage.animationRepeatCount = 1;
+    [self.backgroundImage startAnimating];
     
     [self openingTimer];
     
@@ -79,9 +83,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSArray *)animationArray
+{
+    NSArray *images = @[[UIImage imageNamed:@"open 01"], [UIImage imageNamed:@"open 02"], [UIImage imageNamed:@"open 03"], [UIImage imageNamed:@"open 04"], [UIImage imageNamed:@"open 05"], [UIImage imageNamed:@"open 06"], [UIImage imageNamed:@"open 07"], [UIImage imageNamed:@"open 08"], [UIImage imageNamed:@"open 09"], [UIImage imageNamed:@"open 10"], [UIImage imageNamed:@"open 11"], [UIImage imageNamed:@"open 12"], [UIImage imageNamed:@"open 13"], [UIImage imageNamed:@"open 14"], [UIImage imageNamed:@"open 15"], [UIImage imageNamed:@"open 16"], [UIImage imageNamed:@"open 17"], [UIImage imageNamed:@"open 18"], [UIImage imageNamed:@"open 19"], [UIImage imageNamed:@"open 20"], [UIImage imageNamed:@"open 21"], [UIImage imageNamed:@"open 22"], [UIImage imageNamed:@"open 23"], [UIImage imageNamed:@"open 24"], [UIImage imageNamed:@"open 25"], [UIImage imageNamed:@"open 26"], [UIImage imageNamed:@"open 26"], [UIImage imageNamed:@"open 26"], [UIImage imageNamed:@"open 26"], [UIImage imageNamed:@"open 26"], [UIImage imageNamed:@"open 26"], [UIImage imageNamed:@"open 27"], [UIImage imageNamed:@"open 28"], [UIImage imageNamed:@"open 29"], [UIImage imageNamed:@"open 30"], [UIImage imageNamed:@"open 31"], [UIImage imageNamed:@"open 32"], [UIImage imageNamed:@"open 33"], [UIImage imageNamed:@"open 34"], [UIImage imageNamed:@"open 35"], [UIImage imageNamed:@"open 36"], [UIImage imageNamed:@"open 37"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"], [UIImage imageNamed:@"open 38"]];
+    return images;
+}
+
 -(void)openingTimer
 {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:8.0
                                                   target:self
                                                 selector:@selector(segue)
                                                 userInfo:nil

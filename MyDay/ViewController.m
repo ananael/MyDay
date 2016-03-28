@@ -164,7 +164,7 @@
 
 -(void)adjustForPhoneSizes
 {
-    //Could not remove the extra top/bottom padding, so using borders to mask some empty space in larger screens
+    //Could not remove the extra top/bottom CollectionView padding, so using borders to mask some empty space in larger screens
     //Adjusting certain label font sizes due to iPhone sizes
     if (UIScreen.mainScreen.bounds.size.height == 480) {
         // iPhone 4
@@ -228,21 +228,21 @@
     return cell;
 }
 
-#pragma mark - Buttons
+#pragma mark - Navigation Buttons
 
 - (IBAction)forecastTapped:(id)sender
 {
-    NSLog(@"Forecast Pressed.");
+    
 }
 
 - (IBAction)todoTapped:(id)sender
 {
-    NSLog(@"ToDo Pressed.");
+    
 }
 
 - (IBAction)rssTapped:(id)sender
 {
-    NSLog(@"RSS Pressed.");
+
 }
 
 

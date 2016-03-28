@@ -126,7 +126,7 @@
         
     }
     
-    
+    //NSLog(@"CURRENTLY STUFF: %@", self.resultsDict[@"currently"]);
     
     
     
@@ -212,7 +212,7 @@
     NSInteger borderWidth = 1.0;
     //Even though this code specifies modifications only to cell at index.row == 0,
     //the textcolor change effects the last cell as well.
-    //To resolve, the cells named in the "IF" statement were given a color in the lines above.
+    //To resolve, the cells named in the "IF" statement below were given a color in the lines above.
     if (indexPath.row == 0)
     {
         [self.method addTopBorderWithColor:[UIColor blackColor] andWidth:borderWidth to:cell];
@@ -220,7 +220,12 @@
         cell.dayLabel.text = @"now";
         cell.dayLabel.textColor = [UIColor whiteColor];
         cell.detailLabel.textColor = [UIColor whiteColor];
+        cell.detailLabel.text = self.resultsDict[@"currently"][@"summary"];
         cell.degreeLabel.text = [self.method convertToTemperature:self.resultsDict[@"currently"][@"temperature"]];
+        cell.humidityLabel.text = [self.method convertToHumidity:self.resultsDict[@"currently"][@"humidity"]];
+        cell.precipLabel.text = [self.method convertToPrecipProbability:self.resultsDict[@"currently"][@"precipType"] Probability:self.resultsDict[@"currently"][@"precipProbability"]];
+        cell.windLabel.text = [self.method convertToWindBearing:self.resultsDict[@"currently"][@"windBearing"] AndSpeed:self.resultsDict[@"currently"][@"windSpeed"]];
+        cell.visibilityLabel.text = [self.method convertToVisibility:self.resultsDict[@"currently"][@"visibility"]];
         cell.dateLabel.textColor = [UIColor whiteColor];
         cell.iconImage.image = [self.method stringToIcon:self.resultsDict[@"currently"][@"icon"] Color:@"white"];
         
@@ -231,10 +236,11 @@
     return cell;
  }
 
+#pragma mark - Navigation Buttons
+
 - (IBAction)homeTapped:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
-    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)todoTapped:(id)sender
