@@ -11,6 +11,7 @@
 
 @interface MethodsCache : NSObject
 
+-(UIColor*)colorWithHexString:(NSString*)hex alpha:(CGFloat)alpha;
 -(void)centerButtonText:(NSArray *)array;
 -(void)roundButtonCorners:(NSInteger)radius forArray:(NSArray *)array;
 -(void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat)borderWidth to:(UIView *)view;

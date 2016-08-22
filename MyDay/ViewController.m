@@ -91,7 +91,7 @@
     self.weatherSummary.text = self.resultsDict[@"currently"][@"summary"];
     self.currentTemp.text = [self.method convertToTemperature:self.resultsDict[@"currently"][@"temperature"]];
     self.hiTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMax"]]];
-    self.loTemp.text = [NSString stringWithFormat:@"hi: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMin"]]];
+    self.loTemp.text = [NSString stringWithFormat:@"lo: %@", [self.method convertToTemperature:self.resultsDict[@"daily"][@"data"][0][@"apparentTemperatureMin"]]];
     self.sunTimes.text = [NSString stringWithFormat:@"%@  \u25b2 sun \u25bc  %@", [self.method epochTimeToLongFormat:self.resultsDict[@"daily"][@"data"][0][@"sunriseTime"]], [self.method epochTimeToLongFormat:self.resultsDict[@"daily"][@"data"][0][@"sunsetTime"]]];
     
     //Pulls in the time starting with the array[1]
