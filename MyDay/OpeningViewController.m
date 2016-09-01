@@ -33,7 +33,7 @@
     // Do any additional setup after loading the view.
     
     MethodsCache *methods = [MethodsCache new];
-    self.introAnimation.backgroundColor = [methods colorWithHexString:@"55B6FF" alpha:1.0];
+    self.introAnimation.backgroundColor = [methods colorWithHexString:@"26507A" alpha:1.0];
     
     [self.introAnimation addMyDayIntroAnimation];
     
